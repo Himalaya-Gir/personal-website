@@ -14,7 +14,7 @@ const base = import.meta.env.BASE_URL;
 const currentPath = lang === 'fr' ? '/fr/about' : '/about';
 ---
 
-<Layout title={t('page.title.about', lang)}>
+<Layout title={t('page.title.about', lang)} lang={lang}>
   <Navigation lang={lang} currentPath={currentPath} />
 
   <main class="min-h-screen bg-[#FFF9ED] relative">

@@ -13,7 +13,7 @@ const { lang } = Astro.props;
 const currentPath = lang === 'fr' ? '/fr' : '/';
 ---
 
-<Layout title={t('page.title.home', lang)}>
+<Layout title={t('page.title.home', lang)} lang={lang}>
 	<Navigation lang={lang} currentPath={currentPath} spacerBg="bg-[#003049]" />
 	<main class="min-h-screen bg-[#669bbc]">
 		<!-- Hero Section -->

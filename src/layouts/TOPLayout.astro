@@ -8,18 +8,39 @@ const {
   title,
   description = "That One Paper, a short-form video series from the Donders Institute where researchers share the single paper that changed them.",
 } = Astro.props;
+
 const base = import.meta.env.BASE_URL;
+const siteUrl = Astro.site?.href.replace(/\/$/, '') ?? 'https://himalaya-girard.com';
+const pageUrl = new URL(Astro.url.pathname, siteUrl).href;
+const imageUrl = siteUrl + base + 'that-one-paper/wordmark/wordmark-stacked-on-ivory.png';
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={pageUrl} />
     <link rel="icon" type="image/png" href={base + "favicon.png"} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:site_name" content="That One Paper" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={pageUrl} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
