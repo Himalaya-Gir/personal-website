@@ -55,6 +55,7 @@ const ogLocale = lang === 'fr' ? 'fr_FR' : 'en_GB';
 		<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet" />
 	</head>
 	<body class="bg-[#FFF9ED] text-[#003049] font-sans cursor-none">
+		<a href="#main-content" class="skip-link">Skip to main content</a>
 		<Cursor />
 		<slot />
 	</body>
@@ -86,4 +87,54 @@ const ogLocale = lang === 'fr' ? 'fr_FR' : 'en_GB';
 		font-family: 'Merriweather', Georgia, serif;
 		font-style: italic;
 	}
+
+	/* Keyboard focus ring - only visible on keyboard navigation, not mouse clicks */
+	*:focus-visible {
+		outline: 3px solid #780000;
+		outline-offset: 3px;
+		border-radius: 4px;
+	}
+
+	/* Skip link - hidden until focused, then jumps above content */
+	.skip-link {
+		position: fixed;
+		top: 12px;
+		left: 12px;
+		z-index: 10000;
+		padding: 12px 20px;
+		background: #003049;
+		color: #FFF9ED;
+		font-family: 'Figtree', system-ui, sans-serif;
+		font-weight: 700;
+		text-decoration: none;
+		border-radius: 8px;
+		transform: translateY(-200%);
+		transition: transform 0.2s ease-out;
+	}
+	.skip-link:focus,
+	.skip-link:focus-visible {
+		transform: translateY(0);
+	}
+
+	/* Restore native cursor once the user starts navigating by keyboard */
+	body.keyboard-nav,
+	body.keyboard-nav * {
+		cursor: auto !important;
+	}
+	body.keyboard-nav #custom-cursor,
+	body.keyboard-nav #cursor-dot {
+		display: none !important;
+	}
 </style>
+
+<script>
+	// Once the user presses Tab, treat them as a keyboard user and hand
+	// control back to the native cursor + focus ring. Any mouse movement
+	// reverts to the custom cursor.
+	document.addEventListener('keydown', (e) => {
+		if (e.key === 'Tab') document.body.classList.add('keyboard-nav');
+	});
+	document.addEventListener('mousedown', () => {
+		document.body.classList.remove('keyboard-nav');
+	});
+</script>

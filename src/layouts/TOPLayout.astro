@@ -50,6 +50,7 @@ const imageUrl = siteUrl + base + 'that-one-paper/wordmark/wordmark-stacked-on-i
     />
   </head>
   <body class="top-body">
+    <a href="#main-content" class="top-skip-link">Skip to main content</a>
     <slot />
   </body>
 </html>
@@ -99,5 +100,32 @@ const imageUrl = siteUrl + base + 'that-one-paper/wordmark/wordmark-stacked-on-i
       animation-duration: 0.01ms !important;
       transition-duration: 0.01ms !important;
     }
+  }
+
+  /* Keyboard focus ring */
+  .top-body *:focus-visible {
+    outline: 3px solid var(--top-coral);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Skip link - hidden until focused */
+  .top-skip-link {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 10000;
+    padding: 12px 20px;
+    background: var(--top-navy);
+    color: var(--top-ivory);
+    font-family: var(--top-font-body);
+    font-weight: var(--top-weight-bold);
+    text-decoration: none;
+    transform: translateY(-200%);
+    transition: transform 0.2s ease-out;
+  }
+  .top-skip-link:focus,
+  .top-skip-link:focus-visible {
+    transform: translateY(0);
   }
 </style>
