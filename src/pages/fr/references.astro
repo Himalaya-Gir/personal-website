@@ -85,7 +85,7 @@ const base = import.meta.env.BASE_URL;
               type="text"
               id="searchInput"
               placeholder="Rechercher dans la bibliothèque..."
-              class="w-full pl-12 pr-6 py-3 font-figtree text-base bg-white/50 border border-[#003049]/10 rounded-xl focus:border-[#780000] focus:outline-none focus:ring-4 focus:ring-[#780000]/5 text-[#003049] placeholder:text-[#003049]/40 transition-all shadow-sm hover:shadow-md hover:bg-white/80"
+              class="w-full pl-12 pr-6 py-3 font-figtree text-base bg-[#FFF9ED]/50 border border-[#003049]/10 rounded-xl focus:border-[#780000] focus:outline-none focus:ring-4 focus:ring-[#780000]/5 text-[#003049] placeholder:text-[#003049]/40 transition-all shadow-sm hover:shadow-md hover:bg-[#FFF9ED]/80"
             />
           </div>
 
@@ -98,32 +98,32 @@ const base = import.meta.env.BASE_URL;
         <!-- Category Filters -->
         <div class="flex flex-wrap gap-2 justify-center lg:justify-start pb-2">
           <button
-            class="filter-btn group relative px-4 py-2 rounded-lg text-sm font-bold transition-all duration-300 overflow-hidden active border border-[#003049]/10 hover:border-[#003049]/30 bg-white/50"
+            class="filter-btn group relative px-4 py-2 rounded-lg text-sm font-bold transition-all duration-300 overflow-hidden active border border-[#003049]/10 hover:border-[#003049]/30 bg-[#FFF9ED]/50"
             data-category="all"
           >
             <span class="relative z-10 flex items-center gap-2">
-              Tout <span class="count bg-[#003049]/10 px-1.5 py-0.5 rounded text-[10px]">69</span>
+              Tout <span class="count bg-[#003049]/10 px-1.5 py-0.5 rounded text-[10px]">0</span>
             </span>
           </button>
-          <button class="filter-btn group relative px-4 py-2 rounded-lg text-sm font-bold transition-all duration-300 overflow-hidden border border-[#003049]/10 hover:border-[#003049]/30 bg-white/50" data-category="Core Reading">
+          <button class="filter-btn group relative px-4 py-2 rounded-lg text-sm font-bold transition-all duration-300 overflow-hidden border border-[#003049]/10 hover:border-[#003049]/30 bg-[#FFF9ED]/50" data-category="Core Reading">
             <span class="relative z-10 flex items-center gap-2">Lecture Essentielle <span class="count bg-[#003049]/10 px-1.5 py-0.5 rounded text-[10px]">0</span></span>
           </button>
-          <button class="filter-btn group relative px-4 py-2 rounded-lg text-sm font-bold transition-all duration-300 overflow-hidden border border-[#003049]/10 hover:border-[#003049]/30 bg-white/50" data-category="Trust & Trust Game">
+          <button class="filter-btn group relative px-4 py-2 rounded-lg text-sm font-bold transition-all duration-300 overflow-hidden border border-[#003049]/10 hover:border-[#003049]/30 bg-[#FFF9ED]/50" data-category="Trust & Trust Game">
             <span class="relative z-10 flex items-center gap-2">Confiance <span class="count bg-[#003049]/10 px-1.5 py-0.5 rounded text-[10px]">0</span></span>
           </button>
-          <button class="filter-btn group relative px-4 py-2 rounded-lg text-sm font-bold transition-all duration-300 overflow-hidden border border-[#003049]/10 hover:border-[#003049]/30 bg-white/50" data-category="Risk & Decision Theory">
+          <button class="filter-btn group relative px-4 py-2 rounded-lg text-sm font-bold transition-all duration-300 overflow-hidden border border-[#003049]/10 hover:border-[#003049]/30 bg-[#FFF9ED]/50" data-category="Risk & Decision Theory">
             <span class="relative z-10 flex items-center gap-2">Risque <span class="count bg-[#003049]/10 px-1.5 py-0.5 rounded text-[10px]">0</span></span>
           </button>
-          <button class="filter-btn group relative px-4 py-2 rounded-lg text-sm font-bold transition-all duration-300 overflow-hidden border border-[#003049]/10 hover:border-[#003049]/30 bg-white/50" data-category="Trust-Risk Relationship">
+          <button class="filter-btn group relative px-4 py-2 rounded-lg text-sm font-bold transition-all duration-300 overflow-hidden border border-[#003049]/10 hover:border-[#003049]/30 bg-[#FFF9ED]/50" data-category="Trust-Risk Relationship">
             <span class="relative z-10 flex items-center gap-2">Confiance-Risque <span class="count bg-[#003049]/10 px-1.5 py-0.5 rounded text-[10px]">0</span></span>
           </button>
-          <button class="filter-btn group relative px-4 py-2 rounded-lg text-sm font-bold transition-all duration-300 overflow-hidden border border-[#003049]/10 hover:border-[#003049]/30 bg-white/50" data-category="Social Preferences">
+          <button class="filter-btn group relative px-4 py-2 rounded-lg text-sm font-bold transition-all duration-300 overflow-hidden border border-[#003049]/10 hover:border-[#003049]/30 bg-[#FFF9ED]/50" data-category="Social Preferences">
             <span class="relative z-10 flex items-center gap-2">Social <span class="count bg-[#003049]/10 px-1.5 py-0.5 rounded text-[10px]">0</span></span>
           </button>
-          <button class="filter-btn group relative px-4 py-2 rounded-lg text-sm font-bold transition-all duration-300 overflow-hidden border border-[#003049]/10 hover:border-[#003049]/30 bg-white/50" data-category="Neuroscience">
+          <button class="filter-btn group relative px-4 py-2 rounded-lg text-sm font-bold transition-all duration-300 overflow-hidden border border-[#003049]/10 hover:border-[#003049]/30 bg-[#FFF9ED]/50" data-category="Neuroscience">
             <span class="relative z-10 flex items-center gap-2">Neuro <span class="count bg-[#003049]/10 px-1.5 py-0.5 rounded text-[10px]">0</span></span>
           </button>
-          <button class="filter-btn group relative px-4 py-2 rounded-lg text-sm font-bold transition-all duration-300 overflow-hidden border border-[#003049]/10 hover:border-[#003049]/30 bg-white/50" data-category="Methods & Computational">
+          <button class="filter-btn group relative px-4 py-2 rounded-lg text-sm font-bold transition-all duration-300 overflow-hidden border border-[#003049]/10 hover:border-[#003049]/30 bg-[#FFF9ED]/50" data-category="Methods & Computational">
             <span class="relative z-10 flex items-center gap-2">Methods <span class="count bg-[#003049]/10 px-1.5 py-0.5 rounded text-[10px]">0</span></span>
           </button>
         </div>
@@ -289,38 +289,29 @@ const base = import.meta.env.BASE_URL;
   // Load references on page load
   async function loadReferences() {
     try {
-      console.log('🔍 Attempting to load references.json...');
-      // Try multiple paths to be robust - load French version
-      const paths = [
-        'references-fr.json',
-        '/references-fr.json',
-        BASE_URL + 'references-fr.json',
-        '/trust-risk-website/references-fr.json'
-      ];
-      
+      // Try a short list of paths so the page works under different bases
+      const paths = ['references-fr.json', '/references-fr.json', BASE_URL + 'references-fr.json'];
+
       let response;
       let loaded = false;
 
       for (const path of paths) {
         try {
-          console.log(`Trying path: ${path}`);
           response = await fetch(path);
           if (response.ok) {
             loaded = true;
-            console.log(`✅ Success loading from: ${path}`);
             break;
           }
         } catch (e) {
-          console.log(`Failed path: ${path}`);
+          // Try next path
         }
       }
 
       if (!loaded) {
-        throw new Error(`Could not load references.json from any path. Last status: ${response ? response.status : 'unknown'}`);
+        throw new Error(`Could not load references-fr.json from any path. Last status: ${response ? response.status : 'unknown'}`);
       }
 
       const data = await response.json();
-      console.log('✅ Data loaded successfully, references count:', data.references.length);
       allReferences = data.references;
 
       updateCategoryCounts();
@@ -328,10 +319,8 @@ const base = import.meta.env.BASE_URL;
 
       document.getElementById('loading').classList.add('hidden');
       document.getElementById('resultsCount').classList.remove('hidden');
-      console.log('✅ References displayed successfully');
     } catch (error) {
-      console.error('❌ Error loading references:', error);
-      console.error('Error details:', error.message);
+      console.error('Error loading references:', error);
       document.getElementById('loading').innerHTML =
         '<div class="text-center"><p class="font-figtree text-lg text-[#780000] mb-4">Error loading references.</p><p class="font-figtree text-sm text-[#003049]/70 mb-4">Error: ' + error.message + '</p><p class="font-figtree text-sm text-[#003049]/70">Try: Cmd+Shift+R to hard refresh, or restart npm run dev</p><p class="font-figtree text-xs text-[#003049]/50 mt-4">Check browser console (Cmd+Option+I) for details</p></div>';
     }

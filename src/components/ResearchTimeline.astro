@@ -8,23 +8,23 @@ interface Props {
 const { lang } = Astro.props;
 
 const steps = [
-  { num: 1, color: 'bg-[#D41F00]', textColor: 'text-[#D41F00]' },
-  { num: 2, color: 'bg-[#475573]', textColor: 'text-[#475573]' },
-  { num: 3, color: 'bg-[#D41F00]', textColor: 'text-[#D41F00]' },
-  { num: 4, color: 'bg-[#475573]', textColor: 'text-[#475573]' },
-  { num: 5, color: 'bg-slate-400', textColor: 'text-slate-400' },
+  { num: 1, color: 'bg-[#780000]', textColor: 'text-[#780000]' },
+  { num: 2, color: 'bg-[#003049]', textColor: 'text-[#003049]' },
+  { num: 3, color: 'bg-[#780000]', textColor: 'text-[#780000]' },
+  { num: 4, color: 'bg-[#003049]', textColor: 'text-[#003049]' },
+  { num: 5, color: 'bg-[#669bbc]', textColor: 'text-[#669bbc]' },
 ];
 ---
 
-<section class="py-20 px-6 bg-white" id="process">
+<section class="py-20 px-6 bg-[#FFF9ED]" id="process">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-4xl font-bold text-[#475573] mb-4 text-center">{t('process.title', lang)}</h2>
-    <p class="text-lg text-slate-600 mb-12 text-center max-w-3xl mx-auto">{t('process.subtitle', lang)}</p>
+    <h2 class="text-4xl font-bold text-[#003049] mb-4 text-center">{t('process.title', lang)}</h2>
+    <p class="text-lg text-[#003049]/70 mb-12 text-center max-w-3xl mx-auto">{t('process.subtitle', lang)}</p>
 
     <!-- Desktop Timeline -->
     <div class="hidden lg:block relative">
       <!-- Horizontal line -->
-      <div class="absolute top-12 left-0 right-0 h-1 bg-slate-200"></div>
+      <div class="absolute top-12 left-0 right-0 h-1 bg-[#003049]/10"></div>
 
       <!-- Timeline steps -->
       <div class="grid grid-cols-5 gap-4 relative">
@@ -32,7 +32,7 @@ const steps = [
           <div class="timeline-step cursor-pointer" data-step={step.num}>
             <!-- Circle -->
             <div class="flex justify-center mb-6">
-              <div class={`w-24 h-24 ${step.color} rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg transition-transform hover:scale-110 relative z-10`}>
+              <div class={`w-24 h-24 ${step.color} rounded-full flex items-center justify-center text-[#FFF9ED] text-2xl font-bold shadow-lg transition-transform hover:scale-110 relative z-10`}>
                 {step.num}
               </div>
             </div>
@@ -42,13 +42,13 @@ const steps = [
               <div class={`text-xs font-semibold ${step.textColor} mb-2 uppercase tracking-wide`}>
                 {t(`process.step${step.num}.period`, lang)}
               </div>
-              <h3 class="text-lg font-bold text-slate-800 mb-2">
+              <h3 class="text-lg font-bold text-[#003049] mb-2">
                 {t(`process.step${step.num}.title`, lang)}
               </h3>
 
               <!-- Expandable description -->
               <div class="timeline-desc hidden opacity-0 transition-all duration-300 ease-in-out">
-                <p class="text-sm text-slate-600 leading-relaxed mt-4 p-4 bg-slate-50 rounded-lg border-2 border-slate-200">
+                <p class="text-sm text-[#003049]/70 leading-relaxed mt-4 p-4 bg-[#003049]/5 rounded-lg border-2 border-[#003049]/10">
                   {t(`process.step${step.num}.desc`, lang)}
                 </p>
               </div>
@@ -63,13 +63,13 @@ const steps = [
       {steps.map((step) => (
         <div class="timeline-step-mobile relative pl-16" data-step={step.num}>
           <!-- Circle -->
-          <div class={`absolute left-0 top-0 w-12 h-12 ${step.color} rounded-full flex items-center justify-center text-white font-bold shadow-lg`}>
+          <div class={`absolute left-0 top-0 w-12 h-12 ${step.color} rounded-full flex items-center justify-center text-[#FFF9ED] font-bold shadow-lg`}>
             {step.num}
           </div>
 
           <!-- Vertical line (except last) -->
           {step.num < 5 && (
-            <div class="absolute left-6 top-12 w-0.5 h-full bg-slate-200"></div>
+            <div class="absolute left-6 top-12 w-0.5 h-full bg-[#003049]/10"></div>
           )}
 
           <!-- Content -->
@@ -77,10 +77,10 @@ const steps = [
             <div class={`text-xs font-semibold ${step.textColor} mb-1 uppercase tracking-wide`}>
               {t(`process.step${step.num}.period`, lang)}
             </div>
-            <h3 class="text-xl font-bold text-slate-800 mb-2">
+            <h3 class="text-xl font-bold text-[#003049] mb-2">
               {t(`process.step${step.num}.title`, lang)}
             </h3>
-            <p class="text-sm text-slate-600 leading-relaxed">
+            <p class="text-sm text-[#003049]/70 leading-relaxed">
               {t(`process.step${step.num}.desc`, lang)}
             </p>
           </div>

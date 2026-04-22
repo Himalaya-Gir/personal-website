@@ -1,202 +1,163 @@
-# Guide de Style - Trust & Risk Research Website
+# Style Guide
 
-## 🎨 Palette de Couleurs
+Design rules for the Trust & Risk research website. Follow these strictly — they are enforced by code review and by the audit that ships with the repository.
 
-### Couleurs Principales
-```css
---cream: #FFF9ED        /* Fond principal */
---navy: #003049         /* Texte principal, titres */
---burgundy: #780000     /* Accents, emphases, liens */
---light-blue: #669bbc   /* Détails secondaires */
-```
-
-### Utilisation des Couleurs
-
-#### ✅ FAIRE:
-- Fond de page: `#FFF9ED` (cream)
-- Texte principal: `#003049` (navy)
-- Titres: `#003049` (navy)
-- Accents/Liens: `#780000` (burgundy)
-- Détails secondaires: `#669bbc` (light blue)
-- Sections foncées: `#003049` avec texte `#FFF9ED`
-
-#### ❌ NE JAMAIS FAIRE:
-- **PAS de fond blanc (`#FFFFFF` ou `bg-white`)** - Toujours utiliser `#FFF9ED`
-- **PAS de rouge sur bleu** - Non lisible
-- **PAS de bleu sur rouge** - Non lisible
-
-### Combinaisons Valides
-
-| Fond | Texte | Usage |
-|------|-------|-------|
-| `#FFF9ED` | `#003049` | Page principale, sections claires |
-| `#003049` | `#FFF9ED` | Sections foncées, footer |
-| `#780000` | `#FFF9ED` | Boutons actifs, tags importants |
-| `#669bbc` | `white` | Tags secondaires |
+Scope: this guide applies to the **main site only** (pages under `src/pages/` except `that-one-paper/`). The `/that-one-paper/` subsite is its own brand with a separate system documented in the `design_handoff_that_one_paper/` bundle.
 
 ---
 
-## 📝 Typographie
+## 1. Colour palette
 
-### Police
-- **Unique**: Figtree pour tout
-- Classe: `font-figtree`
+Four colours. No exceptions.
 
-### Hiérarchie
 ```css
-h1: text-5xl md:text-6xl font-bold text-[#003049]
-h2: text-3xl md:text-4xl font-bold text-[#003049]
-h3: text-xl font-semibold text-[#780000] ou text-[#003049]
-Body: text-base text-[#003049]/80
-Small: text-sm text-[#003049]/70
+--cream:       #FFF9ED  /* Page surface */
+--navy:        #003049  /* Primary ink, headings */
+--burgundy:    #780000  /* Accents, emphasis, links */
+--light-blue:  #669bbc  /* Secondary details */
 ```
 
-### Emphase
-- **Bold**: `<strong>` ou `font-bold`
-- **Italique**: `<em class="italic">` pour nuances subtiles
-- **Mix**: Combiner bold + italique si besoin
+### Do
+- Page background: `#FFF9ED`
+- Body text: `#003049`
+- Headings: `#003049`
+- Accents and links: `#780000`
+- Secondary details: `#669bbc`
+- Dark sections: `#003049` surface with `#FFF9ED` text
+
+### Don't
+- Never use `bg-white` or `#FFFFFF`. The main surface is `#FFF9ED`.
+- Never put burgundy text on navy, or navy text on burgundy. The contrast fails.
+- Do not introduce colours outside the palette (no `slate-*`, no grey defaults, no off-palette hex values).
+
+### Valid combinations
+
+| Surface  | Text     | Use                              |
+|----------|----------|----------------------------------|
+| `#FFF9ED`| `#003049`| Main page, light sections         |
+| `#003049`| `#FFF9ED`| Dark sections, footer             |
+| `#780000`| `#FFF9ED`| Active buttons, emphasis tags     |
+| `#669bbc`| `#FFFFFF`| Secondary tags                    |
 
 ---
 
-## 🎯 Composants Standard
+## 2. Typography
 
-### Boutons
+Single family: **Figtree** for everything.
 
-#### Bouton Principal
+- Use `font-figtree` or rely on the global default set on `html`.
+- Italic emphasis uses Merriweather via `<em class="italic">` (wired in `Layout.astro`).
+
+### Hierarchy
+
+```
+h1:    text-5xl md:text-6xl   font-bold     text-[#003049]
+h2:    text-3xl md:text-4xl   font-bold     text-[#003049]
+h3:    text-xl                font-semibold text-[#780000] | text-[#003049]
+body:  text-base                              text-[#003049]/80
+small: text-sm                                text-[#003049]/70
+```
+
+### Emphasis
+- `<strong>` or `font-bold` for bold.
+- `<em class="italic">` for italic nuance.
+- Mix both when needed.
+
+---
+
+## 3. Standard components
+
+### Primary button
 ```html
 <button class="font-figtree px-6 py-3 bg-[#780000] text-[#FFF9ED] rounded-lg hover:bg-[#780000]/90 transition-all font-semibold">
-  Texte
+  Label
 </button>
 ```
 
-#### Bouton Secondaire
+### Secondary button
 ```html
 <button class="font-figtree px-6 py-3 bg-[#FFF9ED] text-[#003049] border-2 border-[#003049] rounded-lg hover:bg-[#003049] hover:text-[#FFF9ED] transition-all font-semibold">
-  Texte
+  Label
 </button>
 ```
 
-#### Bouton Toggle/Filtre
+### Filter / toggle button
 ```html
-<!-- Inactif -->
+<!-- inactive -->
 <button class="font-figtree px-4 py-2 bg-[#FFF9ED] text-[#003049] border-2 border-[#003049] rounded-lg transition-all">
-  Catégorie
+  Category
 </button>
 
-<!-- Actif -->
+<!-- active -->
 <button class="font-figtree px-4 py-2 bg-[#780000] text-[#FFF9ED] border-2 border-[#780000] rounded-lg transition-all">
-  Catégorie
+  Category
 </button>
 ```
 
-### Champs de Saisie
-
+### Input
 ```html
 <input
   type="text"
   class="w-full px-6 py-4 font-figtree text-lg bg-[#FFF9ED] border-2 border-[#003049]/20 rounded-lg focus:border-[#780000] focus:outline-none focus:ring-2 focus:ring-[#780000]/20 transition-all"
-  placeholder="Rechercher..."
+  placeholder="Search..."
 />
 ```
 
-**IMPORTANT**:
-- ❌ PAS `bg-white`
-- ✅ `bg-[#FFF9ED]`
+Never use `bg-white` on an input. Use `bg-[#FFF9ED]`.
 
-### Tags/Badges
-
+### Tag / badge
 ```html
 <span class="inline-block px-3 py-1.5 bg-[#780000] text-[#FFF9ED] rounded-lg text-sm font-semibold">
   Tag
 </span>
 ```
 
-**IMPORTANT**:
-- ❌ PAS `rounded-full` (forme patate)
-- ✅ `rounded-lg` (rectangle avec bords arrondis)
-- ❌ PAS d'emojis dans les tags ou textes
+Important:
+- Use `rounded-lg`, never `rounded-full`. A rectangle with `rounded-full` becomes a pill and violates the brand.
+- No emojis inside tags or copy.
 
-### Cartes
-
+### Card
 ```html
 <div class="bg-[#FFF9ED] border-l-4 border-[#780000] rounded-lg p-6 shadow-md hover:shadow-xl transition-all hover:-translate-y-1">
-  <!-- Contenu -->
+  ...
 </div>
 ```
 
 ---
 
-## 📐 Sections
+## 4. Sections
 
-### Section avec Numéro Vertical
+Use the shared components under `src/components/`:
 
-Utiliser le composant `<SectionNumbered>`:
+- `<SectionNumbered>` for sections with a vertical side number. Alternate surface colours: odd sections use burgundy, even sections use navy.
+- `<SectionBordered>` for sections accented by a left border. Border colour choices: `border-[#669bbc]`, `border-[#780000]`, or `border-[#003049]`.
+- `<DarkSection>` for navy-background blocks with ivory text.
+
+Typical snippet:
 
 ```astro
 <SectionNumbered
   number="01"
-  title="Titre de la section"
+  title="Section title"
   bgColor="bg-[#780000]"
   textColor="text-[#FFF9ED]"
 >
-  <p>Contenu...</p>
+  <p>Body...</p>
 </SectionNumbered>
 ```
 
-**Alternance des couleurs**:
-- Sections impaires: `bg-[#780000]`
-- Sections paires: `bg-[#003049]`
+---
 
-### Section avec Bordure Gauche
+## 5. Corners and borders
 
-Utiliser le composant `<SectionBordered>`:
-
-```astro
-<SectionBordered
-  title="Titre"
-  borderColor="border-[#669bbc]"
->
-  <p>Contenu...</p>
-</SectionBordered>
-```
-
-**Couleurs de bordure courantes**:
-- `border-[#669bbc]` (bleu clair)
-- `border-[#780000]` (burgundy)
-- `border-[#003049]` (navy)
-
-### Section Fond Foncé
-
-Utiliser le composant `<DarkSection>`:
-
-```astro
-<DarkSection
-  title="Titre Important"
-  bgColor="bg-[#003049]"
->
-  <p class="text-[#FFF9ED]">Contenu...</p>
-</DarkSection>
-```
+- Buttons, cards, tags, inputs, section wrappers: `rounded-lg` (8px).
+- `rounded-full` is reserved for genuinely square elements that should render as a circle (timeline dots, avatar frames, cursor rings). Never on rectangles.
+- Default border thickness: `border-2`. Accent left border: `border-l-4`.
+- Border colours: only `#003049`, `#780000`, or `#669bbc`.
 
 ---
 
-## 🔲 Bordures et Arrondis
-
-### Standards
-- **Boutons**: `rounded-lg` (8px)
-- **Cartes**: `rounded-lg` (8px)
-- **Tags**: `rounded-lg` (8px) - **JAMAIS `rounded-full`**
-- **Inputs**: `rounded-lg` (8px)
-- **Sections**: `rounded-lg` (8px)
-
-### Bordures
-- **Épaisseur standard**: `border-2`
-- **Bordure gauche accent**: `border-l-4`
-- **Couleurs**: Toujours `border-[#003049]`, `border-[#780000]`, ou `border-[#669bbc]`
-
----
-
-## 🎭 États Interactifs
+## 6. Interactive states
 
 ### Hover
 ```css
@@ -205,7 +166,7 @@ hover:-translate-y-1
 hover:bg-[#780000]/90
 ```
 
-### Focus (pour inputs)
+### Focus (inputs)
 ```css
 focus:border-[#780000]
 focus:outline-none
@@ -213,97 +174,76 @@ focus:ring-2
 focus:ring-[#780000]/20
 ```
 
-### Active (pour boutons toggle)
-```css
-/* Ajouter la classe 'active' via JavaScript */
-.active {
-  background-color: #780000;
-  border-color: #780000;
-  color: #FFF9ED;
-}
-```
+### Active (toggle buttons)
+Apply via JS by toggling an `active` class that sets burgundy background, burgundy border, ivory text.
 
 ---
 
-## 📱 Responsive
+## 7. Responsive
 
-### Breakpoints Tailwind
+Tailwind breakpoints:
 - `sm`: 640px
 - `md`: 768px
 - `lg`: 1024px
 - `xl`: 1280px
 
-### Utilisation
+Example:
+
 ```html
-<h1 class="text-4xl md:text-5xl lg:text-6xl">Titre</h1>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<h1 class="text-4xl md:text-5xl lg:text-6xl">Title</h1>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">...</div>
 ```
 
 ---
 
-## 🚫 Règles Absolues
+## 8. Hard rules
 
-### ❌ JAMAIS:
-1. **Fond blanc** (`bg-white` ou `#FFFFFF`) - Utiliser `bg-[#FFF9ED]`
-2. **Rouge sur bleu** - Non lisible
-3. **Forme patate** (`rounded-full`) - Utiliser `rounded-lg`
-4. **Emojis** - Utiliser des mots ou icônes SVG
-5. **Polices différentes** - Uniquement Figtree
-6. **Couleurs hors palette** - Uniquement #FFF9ED, #003049, #780000, #669bbc
-7. **Tirets cadratin (—)** - Toujours remplacer par des virgules
+### Never
 
-### ✅ TOUJOURS:
-1. **Figtree** pour toute typographie
-2. **#FFF9ED** pour fonds clairs
-3. **#003049** pour texte principal
-4. **#780000** pour accents/liens
-5. **rounded-lg** pour tous les éléments (8px)
-6. **Transitions** sur hover (`transition-all`)
+1. `bg-white` or `#FFFFFF`. Use `bg-[#FFF9ED]`.
+2. Burgundy on navy or navy on burgundy — contrast fails.
+3. `rounded-full` on rectangles — pill shape is forbidden.
+4. Emojis in UI copy. Use words or inline SVG icons.
+5. Fonts other than Figtree (or Merriweather for italic emphasis).
+6. Colours outside `#FFF9ED / #003049 / #780000 / #669bbc`.
+7. Em-dashes (`—`) in copy. Replace with commas.
+
+### Always
+
+1. Figtree for typography.
+2. `#FFF9ED` for light surfaces.
+3. `#003049` for primary text.
+4. `#780000` for accents and links.
+5. `rounded-lg` (8px) for all UI chrome.
+6. `transition-all` on interactive elements.
 
 ---
 
-## 🎨 Exemples de Couleurs de Tags
+## 9. Tag colour rotation
+
+When rendering a list of tags, rotate through these three combinations:
 
 ```css
-/* Core/Important */
-.tag-core {
-  background-color: #780000;
-  color: #FFF9ED;
-}
+/* 1. Core / important */
+.tag-core      { background: #780000; color: #FFF9ED; }
 
-/* Primary category */
-.tag-primary {
-  background-color: #003049;
-  color: #FFF9ED;
-}
+/* 2. Primary category */
+.tag-primary   { background: #003049; color: #FFF9ED; }
 
-/* Secondary category */
-.tag-secondary {
-  background-color: #669bbc;
-  color: white;
-}
+/* 3. Secondary category */
+.tag-secondary { background: #669bbc; color: #FFFFFF; }
 ```
 
-**Rotation pour multiples tags**:
-1. Burgundy (#780000) + cream text
-2. Navy (#003049) + cream text
-3. Light blue (#669bbc) + white text
-4. Répéter
-
 ---
 
-## 📋 Checklist Avant Commit
+## 10. Pre-commit checklist
 
-- [ ] Aucun `bg-white`
-- [ ] Aucun emoji
-- [ ] Aucun `rounded-full`
-- [ ] Aucun tiret cadratin (—)
-- [ ] Uniquement palette de couleurs autorisée
-- [ ] Uniquement `font-figtree`
-- [ ] Pas de rouge sur bleu
-- [ ] Transitions sur hover
-- [ ] Responsive (`md:`, `lg:`)
-
----
-
-**Dernière mise à jour**: 9 Novembre 2025
+- [ ] No `bg-white` anywhere
+- [ ] No emojis in UI copy
+- [ ] No `rounded-full` on rectangles
+- [ ] No em-dashes (`—`) — replaced with commas
+- [ ] Only the approved palette
+- [ ] Only Figtree (plus Merriweather for `em.italic`)
+- [ ] No burgundy on navy or navy on burgundy
+- [ ] Hover transitions on interactive elements
+- [ ] Responsive breakpoints (`md:`, `lg:`) used where relevant

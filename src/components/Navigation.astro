@@ -12,7 +12,7 @@ const { lang, currentPath = '/', spacerBg = 'bg-transparent' } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const navItems = [
   { href: base + (lang === 'fr' ? 'fr' : ''), label: t('nav.home', lang) },
-  { href: base + (lang === 'fr' ? 'fr/explore' : 'explore'), label: 'Explore' },
+  { href: base + (lang === 'fr' ? 'fr/explore' : 'explore'), label: t('nav.explore', lang) },
   { href: base + (lang === 'fr' ? 'fr/journey' : 'journey'), label: t('nav.journey', lang) },
   { href: base + (lang === 'fr' ? 'fr/references' : 'references'), label: t('nav.references', lang) },
   { href: base + (lang === 'fr' ? 'fr/about' : 'about'), label: t('nav.about', lang) },
@@ -71,7 +71,7 @@ switchUrl = switchUrl.replace(/\/+/g, '/').replace(/\/$/, '') || base;
         <!-- Language Switcher -->
         <a
           href={switchUrl}
-          class="px-4 py-2 bg-[#FFF9ED] text-[#003049] rounded-full font-figtree font-bold text-sm hover:bg-[#780000] hover:text-[#FFF9ED] transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg flex items-center gap-2"
+          class="px-4 py-2 bg-[#FFF9ED] text-[#003049] rounded-lg font-figtree font-bold text-sm hover:bg-[#780000] hover:text-[#FFF9ED] transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg flex items-center gap-2"
           title={`Switch to ${otherLang === 'fr' ? 'Français' : 'English'}`}
         >
           <span class="opacity-50 font-medium text-xs">{lang === 'en' ? 'EN' : 'FR'}</span>
@@ -106,7 +106,7 @@ switchUrl = switchUrl.replace(/\/+/g, '/').replace(/\/$/, '') || base;
       <!-- Language Switcher (Mobile) -->
       <a
         href={switchUrl}
-        class="flex items-center justify-center gap-2 px-4 py-2 bg-[#FFF9ED] text-[#003049] rounded-full font-figtree font-bold text-sm hover:bg-[#780000] hover:text-[#FFF9ED] transition-colors"
+        class="flex items-center justify-center gap-2 px-4 py-2 bg-[#FFF9ED] text-[#003049] rounded-lg font-figtree font-bold text-sm hover:bg-[#780000] hover:text-[#FFF9ED] transition-colors"
       >
         <span class="opacity-50 font-medium text-xs">{lang === 'en' ? 'EN' : 'FR'}</span>
         <span class="w-px h-3 bg-current opacity-20"></span>
