@@ -17,6 +17,12 @@ export const translations = {
     'nav.explore': 'Explore the Research',
     'nav.language': 'FR',
 
+    // Page titles (shown in the browser tab)
+    'page.title.home': 'Deconvolving Trust and Risk | Himalaya Girard',
+    'page.title.about': 'About | Himalaya Girard',
+    'page.title.journey': 'Research Journey | Himalaya Girard',
+    'page.title.references': 'References | Research Library',
+
     // Hero Section
     'hero.title': 'Would you trust a <em class="italic">stranger</em><br/>with $10?',
     'hero.subtitle': 'What if it was a dice roll instead?',
@@ -170,6 +176,12 @@ export const translations = {
     'nav.references': 'Références',
     'nav.explore': 'Explorer la Recherche',
     'nav.language': 'EN',
+
+    // Page titles (shown in the browser tab)
+    'page.title.home': 'Himalaya Girard | Théorie des Perspectives',
+    'page.title.about': 'À Propos | Himalaya Girard',
+    'page.title.journey': 'Parcours de Recherche | Himalaya Girard',
+    'page.title.references': 'Références | Research Library',
 
     // Hero Section
     'hero.title': 'Feriez-vous confiance à un inconnu<br/>avec 10$ ?',

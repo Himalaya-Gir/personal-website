@@ -127,24 +127,13 @@ Important:
 
 ## 4. Sections
 
-Use the shared components under `src/components/`:
+Compose sections inline with Tailwind utilities rather than through dedicated components. Typical patterns:
 
-- `<SectionNumbered>` for sections with a vertical side number. Alternate surface colours: odd sections use burgundy, even sections use navy.
-- `<SectionBordered>` for sections accented by a left border. Border colour choices: `border-[#669bbc]`, `border-[#780000]`, or `border-[#003049]`.
-- `<DarkSection>` for navy-background blocks with ivory text.
+- Dark section (navy surface, ivory text): `bg-[#003049] text-[#FFF9ED]`.
+- Accented section with a coloured left border: `border-l-4 border-[#780000]` (or `border-[#669bbc]` / `border-[#003049]`).
+- Numbered section: use a display-size number in the same accent colour alongside the heading.
 
-Typical snippet:
-
-```astro
-<SectionNumbered
-  number="01"
-  title="Section title"
-  bgColor="bg-[#780000]"
-  textColor="text-[#FFF9ED]"
->
-  <p>Body...</p>
-</SectionNumbered>
-```
+Alternate dark-surface colours between `#780000` and `#003049` when stacking multiple coloured sections so adjacent surfaces contrast.
 
 ---
 
