@@ -1,0 +1,821 @@
+---
+import TOPLayout from '../../layouts/TOPLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+const contactEmail = 'himalaya.girard@donders.ru.nl';
+const newsletterSubject = 'That One Paper, newsletter';
+const newsletterBody = `Hi Himalaya,
+
+I'd love to be notified when That One Paper goes live. Please add me to the newsletter.
+
+Thanks!`;
+const newsletterHref = `mailto:${contactEmail}?subject=${encodeURIComponent(newsletterSubject)}&body=${encodeURIComponent(newsletterBody)}`;
+const participateHref = `mailto:${contactEmail}`;
+---
+
+<TOPLayout title="That One Paper.">
+  <nav class="top-topnav" aria-label="That One Paper sections">
+    <a href={base} class="top-topnav__back">
+      <span class="top-topnav__arrow" aria-hidden="true">&larr;</span>
+      <span>himalaya-girard.com</span>
+    </a>
+    <button
+      type="button"
+      class="top-topnav__burger"
+      aria-label="Open sections menu"
+      aria-expanded="false"
+      aria-controls="top-topnav-menu"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+    <ul id="top-topnav-menu" class="top-topnav__sections" data-open="false">
+      <li><a href="#the-series">The Series</a></li>
+      <li><a href="#episodes">Episodes</a></li>
+      <li><a href="#participate">Participate</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    const burger = document.querySelector('.top-topnav__burger');
+    const menu = document.getElementById('top-topnav-menu');
+    if (burger && menu) {
+      const setOpen = (open: boolean) => {
+        burger.setAttribute('aria-expanded', String(open));
+        menu.setAttribute('data-open', String(open));
+      };
+      burger.addEventListener('click', () => {
+        const isOpen = burger.getAttribute('aria-expanded') === 'true';
+        setOpen(!isOpen);
+      });
+      menu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => setOpen(false));
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') setOpen(false);
+      });
+    }
+  </script>
+
+  <main class="top-main">
+    <section class="top-hero">
+      <div class="top-grain"></div>
+
+      <div class="top-hero__inner">
+        <p class="top-eyebrow">
+          <span>Coming soon</span>
+          <span class="top-eyebrow__sep" aria-hidden="true">·</span>
+          <span>Donders Institute</span>
+          <span class="top-eyebrow__sep" aria-hidden="true">·</span>
+          <span>MMXXVI</span>
+        </p>
+
+        <h1 class="top-lockup top-lockup--hero">
+          <span class="top-lockup__line">That</span>
+          <span class="top-lockup__line"><em>One</em></span>
+          <span class="top-lockup__line">Paper<span class="dot">.</span></span>
+        </h1>
+
+        <p class="top-tagline">
+          The story behind the paper<br />that shaped a scientist.
+        </p>
+      </div>
+
+      <div class="top-hero__rule" aria-hidden="true"></div>
+    </section>
+
+    <section class="top-philosophy" id="what-we-mean">
+      <div class="top-philosophy__inner">
+        <p class="top-section-label">What we mean</p>
+
+        <p class="top-philosophy__big">
+          A research career is not a CV<span class="dot">.</span><br />
+          It's <em>a narrative</em><span class="dot">.</span>
+        </p>
+
+        <ul class="top-philosophy__variants">
+          <li>The paper that <em>rerouted you</em><span class="dot">.</span></li>
+          <li>The paper that <em>kept you up</em><span class="dot">.</span></li>
+          <li>The paper that <em>changed your mind</em><span class="dot">.</span></li>
+          <li>The paper that <em>still whispers</em><span class="dot">.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="top-about" id="the-series">
+      <div class="top-grain"></div>
+
+      <div class="top-about__inner">
+        <p class="top-section-label">The series</p>
+
+        <div class="top-about__body">
+          <p class="top-about__lede">
+            <span class="top-about__dropcap" aria-hidden="true">A</span><span class="top-about__lede-body">short-form video series from the <strong>Donders Institute</strong>, where researchers sit down to talk about the single paper <em>that changed them</em><span class="dot">.</span></span>
+          </p>
+
+          <blockquote class="top-about__pullquote">
+            <span class="top-about__pullquote-line">Not the most cited.</span>
+            <span class="top-about__pullquote-line">Not the most recent.</span>
+            <span class="top-about__pullquote-line">The <em>one</em> that mattered<span class="dot">.</span></span>
+          </blockquote>
+
+          <p class="top-about__recipe" aria-label="Each episode: one scientist, one paper, one pull-quote.">
+            <span class="top-about__recipe-preface">Every episode,</span>
+            <span class="top-about__recipe-word">one scientist</span>
+            <span class="top-about__recipe-sep" aria-hidden="true">·</span>
+            <span class="top-about__recipe-word">one paper</span>
+            <span class="top-about__recipe-sep" aria-hidden="true">·</span>
+            <span class="top-about__recipe-word">one pull-quote<span class="dot">.</span></span>
+          </p>
+
+          <p class="top-about__coda-line">
+            <em>The sentence that stayed with them</em>
+            <em>long after the reading was over<span class="dot">.</span></em>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="top-coming" id="episodes">
+      <div class="top-coming__inner">
+        <p class="top-section-label top-section-label--on-navy">Episodes</p>
+
+        <div class="top-coming__content">
+          <p class="top-coming__headline">
+            First episode<br />
+            <em>landing soon<span class="dot">.</span></em>
+          </p>
+
+          <div class="top-coming__newsletter">
+            <p class="top-coming__pitch">
+              <em>Be the first to hear.</em>
+            </p>
+            <a
+              href={newsletterHref}
+              class="top-cta top-cta--filled"
+            >
+              <span>Subscribe</span><span class="dot" aria-hidden="true">.</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-coming__rail" aria-hidden="true"></div>
+    </section>
+
+    <section class="top-participate" id="participate">
+      <div class="top-grain"></div>
+
+      <div class="top-participate__inner">
+        <p class="top-section-label">Get in touch</p>
+
+        <div class="top-participate__content">
+          <p class="top-participate__headline">
+            <em>Come talk<span class="dot">.</span></em>
+          </p>
+
+          <p class="top-participate__body">
+            Got a paper that stayed with you?
+            Curious about the project?
+            Want to just say hello?
+          </p>
+
+          <a
+            href={participateHref}
+            class="top-cta top-cta--outline"
+          >
+            <span>Say hello</span><span class="dot" aria-hidden="true">.</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="top-footer">
+    <div class="top-footer__inner">
+      <img
+        src={base + "that-one-paper/wordmark/wordmark-horizontal-on-navy.png"}
+        alt="That One Paper"
+        class="top-footer__mark"
+        width="360"
+        height="72"
+      />
+
+      <div class="top-footer__meta">
+        <p>Donders Institute &middot; That One Paper &middot; MMXXVI</p>
+        <p class="top-footer__tagline">
+          The story behind the paper that shaped a scientist.
+        </p>
+        <p class="top-footer__credit">
+          Made by <a href={base}>Himalaya Girard</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="top-footer__rail" aria-hidden="true"></div>
+  </footer>
+</TOPLayout>
+
+<style>
+  /* ─── Top nav (fixed, frosted ivory) ──────────────────────── */
+  .top-topnav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--top-z-overlay);
+    padding: var(--top-space-3) clamp(24px, 6vw, 56px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--top-space-6);
+    background: rgba(244, 238, 228, 0.85);
+    backdrop-filter: saturate(140%) blur(10px);
+    -webkit-backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid rgba(20, 27, 46, 0.08);
+  }
+  .top-topnav a {
+    font-family: var(--top-font-body);
+    font-size: var(--top-text-xs);
+    font-weight: var(--top-weight-medium);
+    letter-spacing: var(--top-track-wide);
+    text-transform: uppercase;
+    color: var(--top-fg);
+    transition: color var(--top-duration-fast) var(--top-ease);
+  }
+  .top-topnav a:hover { color: var(--top-coral); }
+  .top-topnav__back {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--top-space-2);
+  }
+  .top-topnav__arrow {
+    font-size: var(--top-text-base);
+    line-height: 1;
+    transform: translateY(-1px);
+  }
+  .top-topnav__sections {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--top-space-5);
+  }
+  .top-topnav__sections li { margin: 0; }
+
+  /* Burger — hidden on desktop */
+  .top-topnav__burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    color: var(--top-fg);
+  }
+  .top-topnav__burger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: currentColor;
+    transition:
+      transform var(--top-duration-base) var(--top-ease),
+      opacity var(--top-duration-fast) var(--top-ease);
+    transform-origin: center;
+  }
+  .top-topnav__burger:hover { color: var(--top-coral); }
+  .top-topnav__burger[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .top-topnav__burger[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+  .top-topnav__burger[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  @media (max-width: 540px) {
+    .top-topnav__burger { display: flex; }
+
+    .top-topnav__sections {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      gap: 0;
+      background: rgba(244, 238, 228, 0.96);
+      backdrop-filter: saturate(140%) blur(10px);
+      -webkit-backdrop-filter: saturate(140%) blur(10px);
+      border-bottom: 1px solid rgba(20, 27, 46, 0.08);
+      padding: var(--top-space-4) clamp(24px, 6vw, 56px);
+      transform: translateY(-8px);
+      opacity: 0;
+      pointer-events: none;
+      transition:
+        transform var(--top-duration-base) var(--top-ease),
+        opacity var(--top-duration-base) var(--top-ease);
+    }
+    .top-topnav__sections[data-open="true"] {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .top-topnav__sections li {
+      padding: var(--top-space-3) 0;
+      border-top: 1px solid rgba(20, 27, 46, 0.08);
+    }
+    .top-topnav__sections li:first-child { border-top: 0; }
+    .top-topnav__sections a {
+      display: block;
+      font-size: var(--top-text-sm);
+    }
+  }
+
+  .top-main {
+    position: relative;
+    scroll-behavior: smooth;
+  }
+  .top-main section { scroll-margin-top: 72px; }
+
+  .top-eyebrow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--top-space-2) var(--top-space-3);
+    font-family: var(--top-font-mono);
+    font-size: var(--top-text-xs);
+    font-weight: var(--top-weight-medium);
+    letter-spacing: var(--top-track-wide);
+    text-transform: uppercase;
+    color: var(--top-fg);
+    margin-bottom: var(--top-space-10);
+  }
+  .top-eyebrow__sep { color: var(--top-coral); }
+
+  .top-hero {
+    position: relative;
+    min-height: 88vh;
+    padding: clamp(56px, 8vw, 112px) clamp(24px, 6vw, 56px);
+    display: flex;
+    align-items: center;
+    background: var(--top-bg);
+    overflow: hidden;
+  }
+  .top-hero__inner {
+    position: relative;
+    z-index: var(--top-z-content);
+    max-width: var(--top-container-xl);
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .top-lockup--hero {
+    font-size: clamp(96px, 17vw, 240px);
+    display: flex;
+    flex-direction: column;
+    line-height: var(--top-lockup-leading);
+    margin-bottom: var(--top-space-10);
+  }
+  .top-lockup--hero .top-lockup__line { display: block; }
+
+  .top-tagline {
+    font-family: var(--top-font-italic);
+    font-style: italic;
+    font-size: clamp(24px, 3.2vw, 40px);
+    line-height: var(--top-leading-snug);
+    color: var(--top-fg);
+    max-width: 22ch;
+  }
+
+  .top-hero__rule {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 8%;
+    min-width: 4px;
+    max-width: 56px;
+    background: var(--top-coral);
+    z-index: var(--top-z-content);
+  }
+
+  /* ─── Philosophy section — "What we mean" (coral flood) ──── */
+  .top-philosophy {
+    position: relative;
+    background: var(--top-coral);
+    color: var(--top-navy);
+    padding: clamp(80px, 10vw, 160px) clamp(24px, 6vw, 56px);
+    overflow: hidden;
+  }
+  .top-philosophy__inner {
+    position: relative;
+    max-width: var(--top-container-lg);
+    margin: 0 auto;
+    display: grid;
+    gap: var(--top-space-16);
+  }
+  .top-philosophy__big {
+    font-family: var(--top-font-display);
+    font-weight: var(--top-weight-heavy);
+    font-size: clamp(40px, 6.4vw, 88px);
+    line-height: var(--top-leading-tight);
+    letter-spacing: var(--top-track-display);
+    text-transform: uppercase;
+    color: var(--top-navy);
+    margin: 0;
+    max-width: 20ch;
+  }
+  .top-philosophy__big em {
+    font-family: var(--top-font-italic);
+    font-style: italic;
+    font-weight: var(--top-weight-heavy);
+    text-transform: none;
+    color: var(--top-ivory);
+    font-size: 1em;
+  }
+  .top-philosophy__big .dot { color: var(--top-ivory); }
+
+  .top-philosophy__variants {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--top-space-4);
+    font-family: var(--top-font-display);
+    font-weight: var(--top-weight-heavy);
+    font-size: clamp(24px, 3.6vw, 44px);
+    line-height: 1.15;
+    letter-spacing: var(--top-track-display);
+    text-transform: uppercase;
+    color: var(--top-navy);
+  }
+  .top-philosophy__variants li { opacity: 1; }
+  .top-philosophy__variants em {
+    font-family: var(--top-font-italic);
+    font-style: italic;
+    font-weight: var(--top-weight-heavy);
+    text-transform: none;
+    color: var(--top-ivory);
+  }
+  .top-philosophy__variants .dot { color: var(--top-ivory); }
+
+  .top-philosophy__rail {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 8%;
+    min-width: 4px;
+    max-width: 56px;
+    background: var(--top-navy);
+  }
+  .top-philosophy .top-section-label {
+    color: var(--top-navy);
+    border-left-color: var(--top-navy);
+  }
+
+  .top-about {
+    position: relative;
+    background: var(--top-paper);
+    padding: clamp(64px, 9vw, 128px) clamp(24px, 6vw, 56px);
+    overflow: hidden;
+  }
+  .top-about__inner {
+    position: relative;
+    z-index: var(--top-z-content);
+    max-width: var(--top-container-lg);
+    margin: 0 auto;
+    display: grid;
+    gap: var(--top-space-10);
+  }
+
+  .top-section-label {
+    font-family: var(--top-font-mono);
+    font-size: var(--top-text-xs);
+    font-weight: var(--top-weight-medium);
+    letter-spacing: var(--top-track-widest);
+    text-transform: uppercase;
+    color: var(--top-fg);
+    padding-left: var(--top-space-4);
+    border-left: var(--top-rule-thick) solid var(--top-coral);
+  }
+  .top-section-label--on-navy { color: var(--top-ivory); }
+
+  .top-about__body {
+    display: grid;
+    gap: var(--top-space-16);
+    color: var(--top-fg);
+  }
+  .top-about__body strong { font-weight: var(--top-weight-bold); }
+
+  .top-about__lede {
+    font-family: var(--top-font-body);
+    font-size: clamp(20px, 2.2vw, 28px);
+    line-height: var(--top-leading-loose);
+    max-width: var(--top-content-measure);
+    margin: 0;
+  }
+  .top-about__lede strong { font-weight: var(--top-weight-bold); }
+  .top-about__lede em {
+    font-family: var(--top-font-italic);
+    font-style: italic;
+    color: var(--top-coral);
+    font-size: 1.05em;
+  }
+  .top-about__lede .dot { color: var(--top-coral); }
+  .top-about__dropcap {
+    float: left;
+    font-family: var(--top-font-italic);
+    font-style: normal;
+    font-weight: var(--top-weight-body);
+    color: var(--top-fg);
+    font-size: clamp(72px, 9vw, 120px);
+    line-height: 0.88;
+    padding-right: var(--top-space-3);
+    padding-top: 0.08em;
+  }
+  .top-about__lede-body {
+    display: inline;
+  }
+
+  .top-about__pullquote {
+    font-family: var(--top-font-italic);
+    font-style: italic;
+    font-weight: var(--top-weight-body);
+    font-size: clamp(36px, 5.2vw, 72px);
+    line-height: var(--top-leading-snug);
+    color: var(--top-fg);
+    margin: 0;
+    padding: var(--top-space-8) 0;
+    border-top: var(--top-rule-thick) solid var(--top-coral);
+    border-bottom: var(--top-rule-thick) solid var(--top-coral);
+    display: flex;
+    flex-direction: column;
+    gap: var(--top-space-2);
+  }
+  .top-about__pullquote-line { display: block; }
+  .top-about__pullquote em { color: var(--top-coral); }
+  .top-about__pullquote .dot { color: var(--top-coral); }
+
+  .top-about__recipe {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--top-space-2) var(--top-space-4);
+    font-family: var(--top-font-display);
+    font-size: clamp(22px, 3vw, 36px);
+    line-height: var(--top-leading-tight);
+    letter-spacing: var(--top-track-display);
+    text-transform: uppercase;
+    color: var(--top-fg);
+  }
+  .top-about__recipe-preface {
+    font-family: var(--top-font-italic);
+    font-style: italic;
+    font-weight: var(--top-weight-body);
+    font-size: clamp(18px, 2.4vw, 28px);
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--top-fg);
+    opacity: 0.7;
+    margin-right: var(--top-space-2);
+  }
+  .top-about__recipe-word { white-space: nowrap; }
+  .top-about__recipe-sep {
+    color: var(--top-coral);
+    font-family: var(--top-font-body);
+    font-weight: var(--top-weight-bold);
+  }
+  .top-about__recipe .dot { color: var(--top-coral); }
+
+  .top-about__coda-line {
+    font-family: var(--top-font-italic);
+    font-style: italic;
+    font-size: clamp(22px, 2.6vw, 32px);
+    line-height: var(--top-leading-snug);
+    color: var(--top-fg);
+    opacity: 0.75;
+    max-width: 44ch;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .top-about__coda-line em {
+    font-style: italic;
+    display: block;
+  }
+  .top-about__coda-line .dot { color: var(--top-coral); opacity: 1; }
+
+  .top-coming {
+    position: relative;
+    background: var(--top-navy);
+    color: var(--top-ivory);
+    padding: clamp(96px, 12vw, 192px) clamp(24px, 6vw, 56px);
+    overflow: hidden;
+  }
+  .top-coming__inner {
+    position: relative;
+    max-width: var(--top-container-lg);
+    margin: 0 auto;
+    display: grid;
+    gap: var(--top-space-10);
+    grid-template-columns: 1fr;
+  }
+  .top-coming__headline {
+    font-family: var(--top-font-display);
+    font-size: clamp(64px, 10vw, 160px);
+    line-height: var(--top-leading-tight);
+    text-transform: uppercase;
+    color: var(--top-ivory);
+    margin: 0;
+  }
+  .top-coming__headline em {
+    font-family: var(--top-font-italic);
+    font-style: italic;
+    font-weight: var(--top-weight-heavy);
+    text-transform: none;
+    color: var(--top-coral);
+  }
+  .top-coming__headline .dot { color: var(--top-coral); }
+  .top-coming__rail {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 8%;
+    min-width: 4px;
+    max-width: 56px;
+    background: var(--top-coral);
+  }
+  .top-coming__content {
+    display: grid;
+    gap: var(--top-space-16);
+  }
+  .top-coming__newsletter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--top-space-6);
+    max-width: 40ch;
+  }
+  .top-coming__pitch {
+    font-family: var(--top-font-italic);
+    font-style: italic;
+    font-size: clamp(22px, 2.8vw, 32px);
+    line-height: var(--top-leading-snug);
+    color: var(--top-ivory);
+    opacity: 0.85;
+  }
+  .top-coming__pitch em { font-style: italic; }
+
+  .top-participate {
+    position: relative;
+    background: var(--top-bg);
+    padding: clamp(80px, 10vw, 160px) clamp(24px, 6vw, 56px);
+    overflow: hidden;
+  }
+  .top-participate__inner {
+    position: relative;
+    z-index: var(--top-z-content);
+    max-width: var(--top-container-lg);
+    margin: 0 auto;
+    display: grid;
+    gap: var(--top-space-10);
+  }
+  .top-participate__content {
+    display: grid;
+    justify-items: start;
+    gap: var(--top-space-8);
+    max-width: 38ch;
+  }
+  .top-participate__headline {
+    font-family: var(--top-font-italic);
+    font-style: italic;
+    font-size: clamp(48px, 7vw, 96px);
+    line-height: var(--top-leading-snug);
+    color: var(--top-fg);
+    margin: 0;
+  }
+  .top-participate__headline em { font-style: italic; }
+  .top-participate__headline .dot { color: var(--top-coral); }
+  .top-participate__body {
+    font-family: var(--top-font-body);
+    font-size: var(--top-text-md);
+    line-height: var(--top-leading-loose);
+    color: var(--top-fg);
+  }
+
+
+  /* ─── CTA button (sharp-cornered, Archivo bold) ────────────── */
+  .top-cta {
+    display: inline-flex;
+    align-items: baseline;
+    padding: var(--top-space-4) var(--top-space-6);
+    font-family: var(--top-font-body);
+    font-weight: var(--top-weight-bold);
+    font-size: var(--top-text-sm);
+    letter-spacing: var(--top-track-wide);
+    text-transform: uppercase;
+    border-radius: 0;
+    transition:
+      background-color var(--top-duration-base) var(--top-ease),
+      color var(--top-duration-base) var(--top-ease),
+      transform var(--top-duration-fast) var(--top-ease);
+  }
+  .top-cta .dot { color: var(--top-coral); }
+  .top-cta:active { transform: scale(0.98); }
+
+  .top-cta--filled {
+    background: var(--top-coral);
+    color: var(--top-ivory);
+  }
+  .top-cta--filled .dot { color: var(--top-ivory); }
+  .top-cta--filled:hover {
+    background: var(--top-coral-deep);
+  }
+
+  .top-cta--outline {
+    background: transparent;
+    color: var(--top-fg);
+    box-shadow: inset 0 0 0 var(--top-rule-thin) var(--top-fg);
+  }
+  .top-cta--outline:hover {
+    background: var(--top-fg);
+    color: var(--top-ivory);
+  }
+  .top-cta--outline:hover .dot { color: var(--top-coral); }
+
+  .top-footer {
+    position: relative;
+    background: var(--top-navy-soft);
+    color: var(--top-ivory);
+    padding: var(--top-space-16) clamp(24px, 6vw, 56px);
+  }
+  .top-footer__inner {
+    max-width: var(--top-container-lg);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--top-space-8);
+    align-items: flex-start;
+  }
+  .top-footer__mark {
+    width: clamp(240px, 24vw, 360px);
+    height: auto;
+    display: block;
+  }
+  .top-footer__meta {
+    font-family: var(--top-font-mono);
+    font-size: var(--top-text-xs);
+    letter-spacing: var(--top-track-wider);
+    text-transform: uppercase;
+    color: var(--top-ivory);
+    opacity: 0.6;
+    display: grid;
+    gap: var(--top-space-3);
+  }
+  .top-footer__tagline {
+    font-family: var(--top-font-italic);
+    font-style: italic;
+    font-size: var(--top-text-base);
+    letter-spacing: 0;
+    text-transform: none;
+    opacity: 1;
+  }
+  .top-footer__credit {
+    margin-top: var(--top-space-2);
+    color: rgba(244, 238, 228, 0.5);
+  }
+  .top-footer__credit a {
+    color: rgba(244, 238, 228, 0.5);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    transition: color var(--top-duration-fast) var(--top-ease);
+  }
+  .top-footer__credit a:hover {
+    color: var(--top-coral);
+    font-style: italic;
+    text-decoration-thickness: 1.5px;
+  }
+  .top-footer__rail {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 8%;
+    min-width: 4px;
+    max-width: 56px;
+    background: var(--top-coral);
+  }
+
+</style>

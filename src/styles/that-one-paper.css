@@ -1,0 +1,213 @@
+/* ──────────────────────────────────────────────────────────────
+   That One Paper — design tokens
+   Canonical source of truth. Import this file and reference tokens
+   by name. Do not hardcode values elsewhere.
+
+   Package: himalaya-girard.com/that-one-paper
+   Version: 1.0
+   ────────────────────────────────────────────────────────────── */
+
+:root {
+  /* ─── Color · core palette ─────────────────────────────────── */
+  --top-coral:          #E94560;   /* accent · italic ONE · dots · underlines */
+  --top-navy:           #141B2E;   /* primary ink · dark surfaces */
+  --top-ivory:          #F4EEE4;   /* primary surface · warm off-white */
+
+  /* ─── Color · tonal extensions (use sparingly) ─────────────── */
+  --top-coral-deep:     #C8344D;   /* hover / pressed on coral */
+  --top-navy-soft:      #1A1A2E;   /* elevated dark surfaces */
+  --top-ink-soft:       #2A2A2E;   /* body copy on ivory if navy feels too hard */
+  --top-paper:          #EDE6D6;   /* quieter ivory — large text blocks */
+
+  /* ─── Semantic aliases ─────────────────────────────────────── */
+  --top-bg:             var(--top-ivory);
+  --top-fg:             var(--top-navy);
+  --top-accent:         var(--top-coral);
+  --top-bg-inverse:     var(--top-navy);
+  --top-fg-inverse:     var(--top-ivory);
+  --top-rule:           var(--top-navy);
+  --top-rule-accent:    var(--top-coral);
+
+  /* ─── Typography · families ────────────────────────────────── */
+  --top-font-display:   'Bebas Neue', 'Archivo', system-ui, sans-serif;
+  --top-font-italic:    'DM Serif Display', 'Didot', Georgia, serif;
+  --top-font-body:      'Archivo', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --top-font-mono:      'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* ─── Typography · weights ─────────────────────────────────── */
+  --top-weight-body:    400;
+  --top-weight-medium:  500;
+  --top-weight-bold:    700;
+  --top-weight-heavy:   900;   /* Bebas Neue is natively heavy */
+
+  /* ─── Type scale · (rem assumes 16px root) ─────────────────── */
+  --top-text-xs:        12px;  /* micro meta · track 0.24em */
+  --top-text-sm:        14px;  /* labels · eyebrows · track 0.20em */
+  --top-text-base:      17px;  /* body copy — default reading size */
+  --top-text-md:        20px;  /* intro paragraphs · captions */
+  --top-text-lg:        28px;  /* sub-headlines */
+  --top-text-xl:        40px;  /* section titles */
+  --top-text-2xl:       64px;  /* page headlines */
+  --top-text-3xl:       96px;  /* display · lockup small */
+  --top-text-4xl:       160px; /* hero display · lockup large */
+  --top-text-5xl:       240px; /* landing hero */
+
+  /* ─── Type scale · line heights ────────────────────────────── */
+  --top-leading-tight:  0.92;  /* Bebas Neue stack */
+  --top-leading-snug:   1.05;  /* large italic headlines */
+  --top-leading-normal: 1.45;  /* body copy */
+  --top-leading-loose:  1.60;  /* long-form paragraphs */
+
+  /* ─── Type scale · tracking ────────────────────────────────── */
+  --top-track-display:  0;  /* Bebas Neue tightens at scale */
+  --top-track-normal:   0;
+  --top-track-wide:     0.20em;   /* labels */
+  --top-track-wider:    0.24em;   /* micro meta / eyebrows */
+  --top-track-widest:   0.32em;   /* small caps headers */
+
+  /* ─── Spacing · 4px base unit ──────────────────────────────── */
+  --top-space-1:        4px;
+  --top-space-2:        8px;
+  --top-space-3:        12px;
+  --top-space-4:        16px;
+  --top-space-5:        20px;
+  --top-space-6:        24px;
+  --top-space-8:        32px;
+  --top-space-10:       40px;
+  --top-space-12:       48px;
+  --top-space-16:       64px;
+  --top-space-20:       80px;
+  --top-space-24:       96px;
+  --top-space-32:       128px;
+
+  /* ─── Layout · containers ──────────────────────────────────── */
+  --top-container-sm:   640px;    /* mobile · content column */
+  --top-container-md:   960px;    /* tablet */
+  --top-container-lg:   1200px;   /* desktop · default */
+  --top-container-xl:   1440px;   /* wide · full-bleed feature */
+  --top-content-measure: 68ch;    /* body copy max-width — 66–72 chars */
+
+  /* ─── Layout · breakpoints ─────────────────────────────────── */
+  --top-bp-sm:          640px;
+  --top-bp-md:          960px;
+  --top-bp-lg:          1200px;
+  --top-bp-xl:          1440px;
+
+  /* ─── Radius — deliberately small; this brand prefers hard edges ── */
+  --top-radius-none:    0;
+  --top-radius-sm:      2px;   /* buttons, cards */
+  --top-radius-md:      4px;
+  --top-radius-pill:    999px; /* used only for the play-button circle */
+
+  /* ─── Rules / borders ──────────────────────────────────────── */
+  --top-rule-hairline:  1px;
+  --top-rule-thin:      2px;
+  --top-rule-thick:     3px;   /* section dividers — the signature weight */
+
+  /* ─── Shadows · use sparingly ──────────────────────────────── */
+  --top-shadow-sm:      0 1px 2px rgba(20, 27, 46, 0.06),
+                        0 2px 6px rgba(20, 27, 46, 0.04);
+  --top-shadow-md:      0 4px 16px rgba(20, 27, 46, 0.10),
+                        0 1px 3px rgba(20, 27, 46, 0.08);
+  --top-shadow-lift:    0 12px 40px rgba(20, 27, 46, 0.18);
+  /* The brand does NOT use blurry drop-shadows as decoration. Shadows
+     only support elevation (cards hovering above ivory). */
+
+  /* ─── Motion — restrained, confident ───────────────────────── */
+  --top-ease:           cubic-bezier(0.2, 0.7, 0.3, 1);    /* default */
+  --top-ease-in:        cubic-bezier(0.4, 0, 1, 1);
+  --top-ease-out:       cubic-bezier(0, 0, 0.2, 1);
+  --top-duration-fast:  120ms;   /* hover color/opacity */
+  --top-duration-base:  220ms;   /* most transitions */
+  --top-duration-slow:  420ms;   /* page-level reveals */
+
+  /* ─── Grain · applied ONLY on ivory surfaces ───────────────── */
+  --top-grain-opacity:  0.22;
+  --top-grain-blend:    multiply;
+
+  /* ─── Z-index scale ────────────────────────────────────────── */
+  --top-z-base:         0;
+  --top-z-grain:        3;
+  --top-z-content:      4;
+  --top-z-overlay:      50;
+  --top-z-modal:        100;
+  --top-z-toast:        200;
+
+  /* ──────────────────────────────────────────────────────────────
+     LOCKUP · the one non-negotiable artifact
+     --------------------------------------------------------------
+     "That <em>One</em> Paper." — three words, two typefaces, one
+     accent. Each part's spec is exposed as a token so layouts can
+     be reconstructed from CSS alone.
+
+     NOTE: these are defined with terminal values (not var() chains)
+     so they work even if referenced from a different :root scope.
+     ────────────────────────────────────────────────────────────── */
+  --top-lockup-display-family: 'Bebas Neue', 'Archivo', system-ui, sans-serif;
+  --top-lockup-display-weight: 900;
+  --top-lockup-display-case:   uppercase;
+  --top-lockup-display-color:  #141B2E;
+  --top-lockup-display-track: 0;
+
+  --top-lockup-italic-family:  'DM Serif Display', 'Didot', Georgia, serif;
+  --top-lockup-italic-style:   italic;
+  --top-lockup-italic-weight:  900;
+  --top-lockup-italic-color:   #E94560;
+  --top-lockup-italic-track:  0;
+  --top-lockup-italic-size-ratio: 1.0; /* DM Serif Display runs tall — same size as display words */
+
+  --top-lockup-dot-color:      #E94560;
+  --top-lockup-leading:        0.92;
+  --top-lockup-clearspace:     0.5;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   Grain texture — reusable utility. Apply to a <div> inside any
+   ivory surface, absolute-positioned with inset:0. Never apply
+   on coral or navy backgrounds.
+   ────────────────────────────────────────────────────────────── */
+.top-grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: var(--top-z-grain);
+  opacity: var(--top-grain-opacity);
+  mix-blend-mode: var(--top-grain-blend);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .9 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+/* ──────────────────────────────────────────────────────────────
+   LOCKUP utility class
+   Usage:
+     <span class="top-lockup">That <em>One</em> Paper<span class="dot">.</span></span>
+   Override --top-lockup-size on the parent to scale everything.
+   ────────────────────────────────────────────────────────────── */
+.top-lockup {
+  font-family: var(--top-lockup-display-family);
+  font-weight: var(--top-lockup-display-weight);
+  text-transform: var(--top-lockup-display-case);
+  color: var(--top-lockup-display-color);
+  letter-spacing: var(--top-lockup-display-track);
+  line-height: var(--top-lockup-leading);
+  font-synthesis: none;
+  display: inline-block;
+}
+.top-lockup em {
+  font-family: var(--top-lockup-italic-family);
+  font-style: var(--top-lockup-italic-style);
+  font-weight: var(--top-lockup-italic-weight);
+  color: var(--top-lockup-italic-color);
+  letter-spacing: var(--top-lockup-italic-track);
+  text-transform: none;
+  font-size: calc(1em * var(--top-lockup-italic-size-ratio));
+}
+.top-lockup .dot { color: var(--top-lockup-dot-color); }
+
+/* Tone variants (swap surface via parent bg; this only handles ink colour) */
+.top-lockup.on-navy  { color: var(--top-ivory); }
+.top-lockup.on-navy em,
+.top-lockup.on-navy .dot { color: var(--top-coral); }
+
+.top-lockup.on-coral { color: var(--top-navy); }
+.top-lockup.on-coral em,
+.top-lockup.on-coral .dot { color: var(--top-navy); } /* coral-on-coral has no contrast */

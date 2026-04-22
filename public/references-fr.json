@@ -1,0 +1,898 @@
+{
+  "references": [
+    {
+      "authors": "Berg, J., Dickhaut, J., & McCabe, K.",
+      "year": 1995,
+      "title": "Trust, Reciprocity, and Social History",
+      "journal": "Games and Economic Behavior",
+      "volume": "10(1)",
+      "pages": "122-142",
+      "doi": "10.1006/game.1995.1027",
+      "categories": [
+        "Trust & Trust Game",
+        "Core Reading"
+      ],
+      "relevance": "Fondamental - établit le paradigme du Jeu de Confiance montrant que les investissements positifs contredisent les prédictions rationnelles"
+    },
+    {
+      "authors": "Bohnet, I., & Zeckhauser, R.",
+      "year": 2004,
+      "title": "Trust, risk and betrayal",
+      "journal": "Journal of Economic Behavior & Organization",
+      "volume": "55(4)",
+      "pages": "467-484",
+      "doi": "10.1016/j.jebo.2003.11.004",
+      "categories": [
+        "Trust & Trust Game",
+        "Trust-Risk Relationship",
+        "Core Reading"
+      ],
+      "relevance": "Introduit le concept d'« aversion à la trahison » - différencie la confiance du risque pur via les MAPs"
+    },
+    {
+      "authors": "Kahneman, D., & Tversky, A.",
+      "year": 1979,
+      "title": "Prospect Theory: An Analysis of Decision under Risk",
+      "journal": "Econometrica",
+      "volume": "47(2)",
+      "pages": "263-291",
+      "doi": "10.2307/1914185",
+      "categories": [
+        "Risk & Decision Theory",
+        "Core Reading"
+      ],
+      "relevance": "Cadre théorique central - fournit les paramètres de base (α, λ, γ) pour modéliser les décisions"
+    },
+    {
+      "authors": "Tversky, A., & Kahneman, D.",
+      "year": 1992,
+      "title": "Advances in prospect theory: Cumulative representation of uncertainty",
+      "journal": "Journal of Risk and Uncertainty",
+      "volume": "5(4)",
+      "pages": "297-323",
+      "doi": "10.1007/BF00122574",
+      "categories": [
+        "Risk & Decision Theory",
+        "Core Reading"
+      ],
+      "relevance": "Extension CPT avec valeurs de paramètres empiriques (α≈0,88, γ≈0,61) utilisées comme référence"
+    },
+    {
+      "authors": "Eckel, C. C., & Wilson, R. K.",
+      "year": 2004,
+      "title": "Is trust a risky decision?",
+      "journal": "Journal of Economic Behavior & Organization",
+      "volume": "55(4)",
+      "pages": "447-465",
+      "doi": "10.1016/j.jebo.2003.11.003",
+      "categories": [
+        "Trust-Risk Relationship",
+        "Core Reading"
+      ],
+      "relevance": "Étude pionnière trouvant des corrélations nulles entre préférences au risque et comportement de confiance"
+    },
+    {
+      "authors": "Houser, D., Schunk, D., & Winter, J.",
+      "year": 2010,
+      "title": "Distinguishing trust from risk: An anatomy of the investment game",
+      "journal": "Journal of Economic Behavior & Organization",
+      "volume": "74(1)",
+      "pages": "72-81",
+      "doi": "10.1016/j.jebo.2010.01.002",
+      "categories": [
+        "Trust-Risk Relationship"
+      ],
+      "relevance": "Isole l'évaluation du risque des motivations prosociales - montre l'indépendance confiance/risque"
+    },
+    {
+      "authors": "Fairley, K., Sanfey, A., Vyrastekova, J., & Weitzel, U.",
+      "year": 2016,
+      "title": "Trust and risk revisited",
+      "journal": "Journal of Economic Psychology",
+      "volume": "57",
+      "pages": "74-85",
+      "doi": "10.1016/j.joep.2016.10.001",
+      "categories": [
+        "Trust-Risk Relationship",
+        "Methods & Computational",
+        "Core Reading"
+      ],
+      "relevance": "Introduit le Jeu de Confiance Risqué (RTG) pour standardiser le risque de premier ordre dans les contextes de confiance"
+    },
+    {
+      "authors": "Fairley, K., Vyrastekova, J., Weitzel, U., & Sanfey, A. G.",
+      "year": 2019,
+      "title": "Subjective Beliefs About Trust and Reciprocity Activate an Expected Reward Signal in the Ventral Striatum",
+      "journal": "Frontiers in Neuroscience",
+      "volume": "13",
+      "doi": "10.3389/fnins.2019.00660",
+      "categories": [
+        "Trust-Risk Relationship",
+        "Neuroscience"
+      ],
+      "relevance": "Montre une activation différentielle du striatum ventral entre confiance et risque malgré des similitudes comportementales"
+    },
+    {
+      "authors": "Aimone, J. A., Houser, D., & Weber, B.",
+      "year": 2014,
+      "title": "Neural signatures of betrayal aversion: An fMRI study of trust",
+      "journal": "Proceedings of the Royal Society B",
+      "volume": "281(1782)",
+      "doi": "10.1098/rspb.2013.2127",
+      "categories": [
+        "Neuroscience",
+        "Trust & Trust Game"
+      ],
+      "relevance": "Localise l'aversion à la trahison dans l'insula antérieure droite - signature neuronale distincte de l'aversion aux pertes"
+    },
+    {
+      "authors": "Murphy, R. O., Ackermann, K. A., & Handgraaf, M. J. J.",
+      "year": 2011,
+      "title": "Measuring Social Value Orientation",
+      "journal": "Judgment and Decision Making",
+      "volume": "6(8)",
+      "pages": "771-781",
+      "doi": "10.1017/S1930297500004204",
+      "categories": [
+        "Social Preferences",
+        "Methods & Computational",
+        "Core Reading"
+      ],
+      "relevance": "Mesure SVO utilisée pour quantifier les préférences sociales (φ) et valider le modèle"
+    },
+    {
+      "authors": "Ashraf, N., Bohnet, I., & Piankov, N.",
+      "year": 2006,
+      "title": "Decomposing trust and trustworthiness",
+      "journal": "Experimental Economics",
+      "volume": "9(3)",
+      "pages": "193-208",
+      "doi": "10.1007/s10683-006-9122-4",
+      "categories": [
+        "Trust & Trust Game",
+        "Social Preferences"
+      ],
+      "relevance": "Décompose la confiance en gentillesse inconditionnelle et attentes de réciprocité - 62% de variance expliquée"
+    },
+    {
+      "authors": "Schechter, L.",
+      "year": 2007,
+      "title": "Traditional trust measurement and the risk confound: An experiment in rural Paraguay",
+      "journal": "Journal of Economic Behavior & Organization",
+      "volume": "62(2)",
+      "pages": "272-292",
+      "doi": "10.1016/j.jebo.2005.03.006",
+      "categories": [
+        "Trust-Risk Relationship"
+      ],
+      "relevance": "Trouve des corrélations positives confiance-risque avec le paradigme de paris aux dés - contradictions méthodologiques"
+    },
+    {
+      "authors": "Chetty, R., Hofmeyr, A., Kincaid, H., & Monroe, B.",
+      "year": 2021,
+      "title": "The Trust Game Does Not (Only) Measure Trust: The Risk-Trust Confound Revisited",
+      "journal": "Journal of Behavioral and Experimental Economics",
+      "volume": "90",
+      "doi": "10.1016/j.socec.2020.101520",
+      "categories": [
+        "Trust-Risk Relationship",
+        "Methods & Computational"
+      ],
+      "relevance": "Élicitation extensive (40 loteries) montre 20% de variance partagée - la résolution de mesure importe"
+    },
+    {
+      "authors": "Johnson, N. D., & Mislin, A. A.",
+      "year": 2011,
+      "title": "Trust games: A meta-analysis",
+      "journal": "Journal of Economic Psychology",
+      "volume": "32(5)",
+      "pages": "865-889",
+      "doi": "10.1016/j.joep.2011.05.007",
+      "categories": [
+        "Trust & Trust Game",
+        "Core Reading"
+      ],
+      "relevance": "Méta-analyse de 162 réplications - transferts ~50% des dotations, réciprocité ~1/3"
+    },
+    {
+      "authors": "Kanagaretnam, K., Mestelman, S., Shehata, M., & Nainar, K.",
+      "year": 2006,
+      "title": "The Impact of Sex, Value Orientations and Risk Attitudes on Trust and Reciprocity",
+      "journal": "SSRN Working Paper",
+      "doi": "10.2139/ssrn.926076",
+      "categories": [
+        "Social Preferences",
+        "Trust-Risk Relationship"
+      ],
+      "relevance": "SVO prédit significativement la confiance (p=0,002) mais pas les attitudes au risque"
+    },
+    {
+      "authors": "Nguyen, Q., Villeval, M. C., & Xu, H.",
+      "year": 2016,
+      "title": "Trust under the Prospect Theory and Quasi-Hyperbolic Preferences",
+      "journal": "Economic Development and Cultural Change",
+      "volume": "64(3)",
+      "pages": "545-572",
+      "doi": "10.1086/685434",
+      "categories": [
+        "Risk & Decision Theory",
+        "Trust-Risk Relationship"
+      ],
+      "relevance": "Seule application antérieure de la Théorie des Perspectives à la confiance - limite l'asymétrie méthodologique"
+    },
+    {
+      "authors": "Stott, H. P.",
+      "year": 2006,
+      "title": "Cumulative prospect theory's functional menagerie",
+      "journal": "Journal of Risk and Uncertainty",
+      "volume": "32(2)",
+      "pages": "101-130",
+      "doi": "10.1007/s11166-006-8289-6",
+      "categories": [
+        "Risk & Decision Theory",
+        "Methods & Computational"
+      ],
+      "relevance": "Évaluation de 256 variantes CPT - guide le choix des fonctions de valeur et de pondération"
+    },
+    {
+      "authors": "Lauharatanahirun, N., Christopoulos, G. I., & King-Casas, B.",
+      "year": 2012,
+      "title": "Neural computations underlying social risk sensitivity",
+      "journal": "Frontiers in Human Neuroscience",
+      "volume": "6",
+      "doi": "10.3389/fnhum.2012.00213",
+      "categories": [
+        "Neuroscience",
+        "Trust-Risk Relationship"
+      ],
+      "relevance": "Corrélation comportementale confiance-risque (ρ=0,60) mais mécanismes neuronaux distincts via l'amygdale"
+    },
+    {
+      "authors": "Krain, A. L., Wilson, A. M., Arbuckle, R., et al.",
+      "year": 2006,
+      "title": "Distinct neural mechanisms of risk and ambiguity: A meta-analysis of decision-making",
+      "journal": "NeuroImage",
+      "volume": "32(1)",
+      "pages": "477-484",
+      "doi": "10.1016/j.neuroimage.2006.02.047",
+      "categories": [
+        "Neuroscience",
+        "Risk & Decision Theory",
+        "Core Reading"
+      ],
+      "relevance": "Méta-analyse montrant des réseaux neuronaux distincts pour le risque de 1er vs 2ème ordre - explique le biais"
+    },
+    {
+      "authors": "Bohnet, I., Greig, F., Herrmann, B., & Zeckhauser, R.",
+      "year": 2008,
+      "title": "Betrayal Aversion: Evidence from Brazil, China, Oman, Switzerland, Turkey, and the United States",
+      "journal": "American Economic Review",
+      "volume": "98(1)",
+      "pages": "294-310",
+      "doi": "10.1257/aer.98.1.294",
+      "categories": [
+        "Trust & Trust Game",
+        "Trust-Risk Relationship"
+      ],
+      "relevance": "Validation interculturelle de l'aversion à la trahison - paramètre τ universel"
+    },
+    {
+      "authors": "Cox, J. C.",
+      "year": 2004,
+      "title": "How to identify trust and reciprocity",
+      "journal": "Games and Economic Behavior",
+      "volume": "46(2)",
+      "pages": "260-281",
+      "doi": "10.1016/S0899-8256(03)00119-2",
+      "categories": [
+        "Trust & Trust Game",
+        "Methods & Computational"
+      ],
+      "relevance": "Méthode pour séparer confiance et altruisme via comparaison JC/Jeu du Dictateur"
+    },
+    {
+      "authors": "Tom, S. M., Fox, C. R., Trepel, C., & Poldrack, R. A.",
+      "year": 2007,
+      "title": "The Neural Basis of Loss Aversion in Decision-Making Under Risk",
+      "journal": "Science",
+      "volume": "315(5811)",
+      "pages": "515-518",
+      "doi": "10.1126/science.1134239",
+      "categories": [
+        "Neuroscience",
+        "Risk & Decision Theory"
+      ],
+      "relevance": "Base neuronale de l'aversion aux pertes (λ) - désactivation striatale double l'activation pour les gains"
+    },
+    {
+      "authors": "Hsu, M., Krajbich, I., Zhao, C., & Camerer, C. F.",
+      "year": 2009,
+      "title": "Neural Response to Reward Anticipation under Risk Is Nonlinear in Probabilities",
+      "journal": "Journal of Neuroscience",
+      "volume": "29(7)",
+      "pages": "2231-2237",
+      "doi": "10.1523/JNEUROSCI.5296-08.2009",
+      "categories": [
+        "Neuroscience",
+        "Risk & Decision Theory"
+      ],
+      "relevance": "Codage neuronal non linéaire des probabilités - valide la fonction de pondération en S inversé"
+    },
+    {
+      "authors": "Imaizumi, Y., Tymula, A., Tsubo, Y., Matsumoto, M., & Yamada, H.",
+      "year": 2022,
+      "title": "A neuronal prospect theory model in the brain reward circuitry",
+      "journal": "Nature Communications",
+      "volume": "13(1)",
+      "doi": "10.1038/s41467-022-33579-0",
+      "categories": [
+        "Neuroscience",
+        "Risk & Decision Theory"
+      ],
+      "relevance": "Enregistrements unitaires montrant l'intégration paramétrique dans le cortex orbitofrontal et le striatum"
+    },
+    {
+      "authors": "Cosmides, L., & Tooby, J.",
+      "year": 1992,
+      "title": "Cognitive Adaptations for Social Exchange",
+      "book": "The Adapted Mind",
+      "pages": "163-228",
+      "doi": "10.1093/oso/9780195060232.003.0004",
+      "categories": [
+        "Social Preferences",
+        "Risk & Decision Theory"
+      ],
+      "relevance": "Théorie du contrat social - mécanismes cognitifs spécialisés pour détecter la coopération"
+    },
+    {
+      "authors": "Coleman, J. S.",
+      "year": 1990,
+      "title": "Foundations of Social Theory",
+      "publisher": "Harvard University Press",
+      "categories": [
+        "Trust & Trust Game",
+        "Risk & Decision Theory"
+      ],
+      "relevance": "Conceptualise la confiance comme calcul rationnel - prédit des corrélations confiance-risque"
+    },
+    {
+      "authors": "Evans, A. M., & Krueger, J. I.",
+      "year": 2014,
+      "title": "Outcomes and expectations in dilemmas of trust",
+      "journal": "Judgment and Decision Making",
+      "volume": "9(2)",
+      "pages": "90-103",
+      "doi": "10.1017/S1930297500005465",
+      "categories": [
+        "Trust & Trust Game",
+        "Risk & Decision Theory"
+      ],
+      "relevance": "Propose des processus computationnels identiques pour les perspectives sociales et non sociales"
+    },
+    {
+      "authors": "Knight, F. H.",
+      "year": 1921,
+      "title": "Risk, Uncertainty and Profit",
+      "publisher": "Social Science Research Network",
+      "categories": [
+        "Risk & Decision Theory"
+      ],
+      "relevance": "Distinction fondamentale entre risque (probabilités connues) et incertitude (probabilités inconnues)"
+    },
+    {
+      "authors": "Ellsberg, D.",
+      "year": 1961,
+      "title": "Risk, Ambiguity, and the Savage Axioms",
+      "journal": "The Quarterly Journal of Economics",
+      "volume": "75(4)",
+      "pages": "643-669",
+      "doi": "10.2307/1884324",
+      "categories": [
+        "Risk & Decision Theory"
+      ],
+      "relevance": "Établit une taxonomie de l'incertitude - ambiguïté quand ni résultats ni probabilités connus"
+    },
+    {
+      "authors": "Knack, S., & Keefer, P.",
+      "year": 1997,
+      "title": "Does Social Capital Have an Economic Payoff? A Cross-Country Investigation",
+      "journal": "The Quarterly Journal of Economics",
+      "volume": "112(4)",
+      "pages": "1251-1288",
+      "doi": "10.1162/003355300555475",
+      "categories": [
+        "Trust & Trust Game"
+      ],
+      "relevance": "10% d'augmentation de la confiance sociétale = 0,5% de croissance économique annuelle supplémentaire"
+    },
+    {
+      "authors": "Zak, P. J., & Knack, S.",
+      "year": 2001,
+      "title": "Trust and Growth",
+      "journal": "The Economic Journal",
+      "volume": "111(470)",
+      "pages": "295-321",
+      "doi": "10.1111/1468-0297.00609",
+      "categories": [
+        "Trust & Trust Game"
+      ],
+      "relevance": "Identifie le chemin causal confiance → croissance via le taux d'investissement"
+    },
+    {
+      "authors": "Brown, S., Gray, D., McHardy, J., & Taylor, K.",
+      "year": 2015,
+      "title": "Employee trust and workplace performance",
+      "journal": "Journal of Economic Behavior & Organization",
+      "volume": "116",
+      "pages": "361-378",
+      "doi": "10.1016/j.jebo.2015.05.001",
+      "categories": [
+        "Trust & Trust Game"
+      ],
+      "relevance": "La confiance améliore la performance financière en réduisant les coûts de surveillance"
+    },
+    {
+      "authors": "Zand, D. E.",
+      "year": 1972,
+      "title": "Trust and Managerial Problem Solving",
+      "journal": "Administrative Science Quarterly",
+      "volume": "17(2)",
+      "pages": "229-239",
+      "doi": "10.2307/2393957",
+      "categories": [
+        "Trust & Trust Game"
+      ],
+      "relevance": "Définition de la confiance : volonté d'augmenter sa vulnérabilité sans contrôle sur autrui"
+    },
+    {
+      "authors": "Glimcher, P. W.",
+      "year": 2013,
+      "title": "Neuroeconomics: Decision Making and the Brain",
+      "publisher": "Academic Press",
+      "categories": [
+        "Neuroscience",
+        "Risk & Decision Theory"
+      ],
+      "relevance": "Définit le risque en neuroéconomie comme variance sur la distribution de probabilité des résultats"
+    },
+    {
+      "authors": "Keynes, J. M.",
+      "year": 1921,
+      "title": "A Treatise on Probability",
+      "journal": "Science",
+      "volume": "58(1490)",
+      "pages": "51-52",
+      "doi": "10.1126/science.58.1490.51.b",
+      "categories": [
+        "Risk & Decision Theory"
+      ],
+      "relevance": "Contribution précoce à la taxonomie de l'incertitude"
+    },
+    {
+      "authors": "Karlan, D. S.",
+      "year": 2005,
+      "title": "Using Experimental Economics to Measure Social Capital and Predict Financial Decisions",
+      "journal": "The American Economic Review",
+      "volume": "95(5)",
+      "pages": "1688-1699",
+      "categories": [
+        "Trust-Risk Relationship"
+      ],
+      "relevance": "Le comportement de confiance prédit les décisions financières réelles - épargne et défaut"
+    },
+    {
+      "authors": "Fehr, E.",
+      "year": 2009,
+      "title": "On the Economics and Biology of Trust",
+      "journal": "Journal of the European Economic Association",
+      "volume": "7(2-3)",
+      "pages": "235-266",
+      "doi": "10.1162/JEEA.2009.7.2-3.235",
+      "categories": [
+        "Trust & Trust Game",
+        "Trust-Risk Relationship"
+      ],
+      "relevance": "La disposition au risque SOEP prédit modestement la confiance mais l'aversion à la trahison est plus forte"
+    },
+    {
+      "authors": "Dohmen, T., Falk, A., Huffman, D., et al.",
+      "year": 2011,
+      "title": "Individual Risk Attitudes: Measurement, Determinants, and Behavioral Consequences",
+      "journal": "Journal of the European Economic Association",
+      "volume": "9(3)",
+      "pages": "522-550",
+      "doi": "10.1111/j.1542-4774.2011.01015.x",
+      "categories": [
+        "Risk & Decision Theory",
+        "Methods & Computational"
+      ],
+      "relevance": "Validation de la mesure de disposition au risque SOEP"
+    },
+    {
+      "authors": "Ben-Ner, A., & Halldorsson, F.",
+      "year": 2010,
+      "title": "Trusting and trustworthiness: What are they, how to measure them, and what affects them",
+      "journal": "Journal of Economic Psychology",
+      "volume": "31(1)",
+      "pages": "64-79",
+      "doi": "10.1016/j.joep.2009.10.001",
+      "categories": [
+        "Trust & Trust Game",
+        "Trust-Risk Relationship"
+      ],
+      "relevance": "Pas de relation entre mesures comportementales et mesures de confiance par sondage"
+    },
+    {
+      "authors": "Etang, A., Fielding, D., & Knowles, S.",
+      "year": 2011,
+      "title": "Does trust extend beyond the village? Experimental trust and social distance in Cameroon",
+      "journal": "Experimental Economics",
+      "volume": "14(1)",
+      "pages": "15-35",
+      "doi": "10.1007/s10683-010-9255-3",
+      "categories": [
+        "Trust-Risk Relationship"
+      ],
+      "relevance": "Preuves de terrain du Cameroun - corrélation confiance-risque non significative (β=0,09, p>0,05)"
+    },
+    {
+      "authors": "Garapin, A., Muller, L., & Rahali, B.",
+      "year": 2015,
+      "title": "Does Trust Mean Giving and not Risking? Experimental Evidence from the Trust Game",
+      "journal": "Revue d'économie Politique",
+      "volume": "125(5)",
+      "pages": "701-716",
+      "doi": "10.3917/redp.255.0701",
+      "categories": [
+        "Trust-Risk Relationship",
+        "Social Preferences"
+      ],
+      "relevance": "Design intra-sujet - les préférences sociales prédisent mais variance minimale (R²≈0,14-0,18)"
+    },
+    {
+      "authors": "Breuer, W., Helduser, C., & Schade, P.",
+      "year": 2017,
+      "title": "The More You Expect, the Less You Trust: On the Flipside of Trustworthiness Expectations",
+      "journal": "SSRN Working Paper",
+      "doi": "10.2139/ssrn.2703306",
+      "categories": [
+        "Trust & Trust Game"
+      ],
+      "relevance": "Des attentes de fiabilité plus élevées corrèlent avec une moindre volonté de faire confiance - dynamiques complexes"
+    },
+    {
+      "authors": "Derks, J., Lee, N. C., & Krabbendam, L.",
+      "year": 2014,
+      "title": "Adolescent trust and trustworthiness: Role of gender and social value orientation",
+      "journal": "Journal of Adolescence",
+      "volume": "37(8)",
+      "pages": "1379-1386",
+      "doi": "10.1016/j.adolescence.2014.09.014",
+      "categories": [
+        "Social Preferences",
+        "Trust & Trust Game"
+      ],
+      "relevance": "SVO prédit la confiance chez les adolescents (β=-0,31, p<0,001)"
+    },
+    {
+      "authors": "Wei, Z.",
+      "year": 2016,
+      "title": "Trust and Social Value Orientation Study",
+      "journal": "Unpublished",
+      "categories": [
+        "Social Preferences",
+        "Trust & Trust Game"
+      ],
+      "relevance": "Les prosociaux (M=0,62) font plus confiance que les proselfs (M=0,51, p<0,001)"
+    },
+    {
+      "authors": "Snijders, C. C. P.",
+      "year": 1996,
+      "title": "Trust and commitments",
+      "thesis": "Thesis UG",
+      "categories": [
+        "Social Preferences",
+        "Trust & Trust Game"
+      ],
+      "relevance": "L'orientation prosociale corrèle avec la propension à la confiance"
+    },
+    {
+      "authors": "Lambert, B., Declerck, C. H., Emonds, G., & Boone, C.",
+      "year": 2017,
+      "title": "Trust as commodity: Social value orientation affects the neural substrates of learning to cooperate",
+      "journal": "Social Cognitive and Affective Neuroscience",
+      "volume": "12(4)",
+      "pages": "609-617",
+      "doi": "10.1093/scan/nsw170",
+      "categories": [
+        "Social Preferences",
+        "Neuroscience"
+      ],
+      "relevance": "SVO module les substrats neuronaux de l'apprentissage coopératif"
+    },
+    {
+      "authors": "Liebrand, W. B. G.",
+      "year": 1984,
+      "title": "The effect of social motives, communication and group size on behaviour in an N-person multi-stage mixed-motive game",
+      "journal": "European Journal of Social Psychology",
+      "volume": "14(3)",
+      "pages": "239-264",
+      "doi": "10.1002/ejsp.2420140302",
+      "categories": [
+        "Social Preferences",
+        "Methods & Computational"
+      ],
+      "relevance": "Mesure Ring originale pour SVO - fondation méthodologique"
+    },
+    {
+      "authors": "Trautmann, S. T., Vieider, F. M., & Wakker, P. P.",
+      "year": 2008,
+      "title": "Causes of ambiguity aversion: Known versus unknown preferences",
+      "journal": "Journal of Risk and Uncertainty",
+      "volume": "36(3)",
+      "pages": "225-243",
+      "doi": "10.1007/s11166-008-9038-9",
+      "categories": [
+        "Risk & Decision Theory"
+      ],
+      "relevance": "Les pertes sociales signalent un mauvais jugement social - dimensions additionnelles"
+    },
+    {
+      "authors": "Falk, A., & Fischbacher, U.",
+      "year": 2006,
+      "title": "A theory of reciprocity",
+      "journal": "Games and Economic Behavior",
+      "volume": "54(2)",
+      "pages": "293-315",
+      "doi": "10.1016/j.geb.2005.03.001",
+      "categories": [
+        "Social Preferences",
+        "Trust & Trust Game"
+      ],
+      "relevance": "Théorie de la réciprocité incluant les évaluations d'intentionnalité"
+    },
+    {
+      "authors": "Ma, I., Sanfey, A. G., & Ma, W. J.",
+      "year": 2020,
+      "title": "The social cost of gathering information for trust decisions",
+      "journal": "Scientific Reports",
+      "volume": "10(1)",
+      "doi": "10.1038/s41598-020-69766-6",
+      "categories": [
+        "Trust & Trust Game",
+        "Neuroscience"
+      ],
+      "relevance": "Traitement de la réputation dans les décisions de confiance"
+    },
+    {
+      "authors": "Kugler, T., Ye, B., Motro, D., & Noussair, C. N.",
+      "year": 2020,
+      "title": "On Trust and Disgust: Evidence From Face Reading and Virtual Reality",
+      "journal": "Social Psychological and Personality Science",
+      "volume": "11(3)",
+      "pages": "317-325",
+      "doi": "10.1177/1948550619856302",
+      "categories": [
+        "Trust & Trust Game"
+      ],
+      "relevance": "Émotions morales dans la confiance - mécanismes additionnels"
+    },
+    {
+      "authors": "Schlösser, T., Mensching, O., Dunning, D., & Fetchenhauer, D.",
+      "year": 2015,
+      "title": "Trust and Rationality: Shifting Normative Analyses of Risks Involving Other People Versus Nature",
+      "journal": "Social Cognition",
+      "volume": "33(5)",
+      "pages": "459-482",
+      "doi": "10.1521/soco.2015.33.5.459",
+      "categories": [
+        "Trust & Trust Game",
+        "Risk & Decision Theory"
+      ],
+      "relevance": "Adhésion aux normes - distingue risques sociaux vs naturels"
+    },
+    {
+      "authors": "Dunning, D., & Fetchenhauer, D.",
+      "year": 2010,
+      "title": "Trust as an expressive rather than an instrumental act",
+      "book": "Advances in Group Processes",
+      "volume": "27",
+      "pages": "97-127",
+      "doi": "10.1108/S0882-6145(2010)0000027007",
+      "categories": [
+        "Trust & Trust Game"
+      ],
+      "relevance": "La confiance comme acte expressif - peut dépasser le risque dans certains contextes"
+    },
+    {
+      "authors": "Kahneman, D., Knetsch, J. L., & Thaler, R. H.",
+      "year": 1986,
+      "title": "Fairness and the Assumptions of Economics",
+      "journal": "The Journal of Business",
+      "volume": "59(4)",
+      "pages": "S285-S300",
+      "categories": [
+        "Risk & Decision Theory",
+        "Social Preferences"
+      ],
+      "relevance": "Introduit le Jeu du Dictateur - mesure l'altruisme pur"
+    },
+    {
+      "authors": "Derks, J., Van Scheppingen, M. A., Lee, N. C., & Krabbendam, L.",
+      "year": 2015,
+      "title": "Trust and mindreading in adolescents: The moderating role of social value orientation",
+      "journal": "Frontiers in Psychology",
+      "volume": "6",
+      "doi": "10.3389/fpsyg.2015.00965",
+      "categories": [
+        "Social Preferences",
+        "Trust & Trust Game"
+      ],
+      "relevance": "SVO modère la relation entre théorie de l'esprit et confiance"
+    },
+    {
+      "authors": "Holt, C. A., & Laury, S. K.",
+      "year": 2002,
+      "title": "Risk Aversion and Incentive Effects",
+      "journal": "American Economic Review",
+      "volume": "92(5)",
+      "pages": "1644-1655",
+      "doi": "10.1257/000282802762024700",
+      "categories": [
+        "Risk & Decision Theory",
+        "Methods & Computational"
+      ],
+      "relevance": "Liste de prix multiples pour élicitation des préférences au risque - méthode standard"
+    },
+    {
+      "authors": "Zuckerman, M.",
+      "year": 1979,
+      "title": "Sensation Seeking: Beyond the Optimal Level of Arousal",
+      "publisher": "Psychology Press",
+      "doi": "10.4324/9781315755496",
+      "categories": [
+        "Risk & Decision Theory"
+      ],
+      "relevance": "Échelle de recherche de sensations - mesure les différences individuelles"
+    },
+    {
+      "authors": "Rogers, R. D., Lancaster, M., Wakeley, J., & Bhagwagar, Z.",
+      "year": 2004,
+      "title": "Effects of beta-adrenoceptor blockade on components of human decision-making",
+      "journal": "Psychopharmacology",
+      "volume": "172(2)",
+      "pages": "157-164",
+      "doi": "10.1007/s00213-003-1641-5",
+      "categories": [
+        "Neuroscience",
+        "Risk & Decision Theory"
+      ],
+      "relevance": "Les antagonistes β-adrénergiques réduisent sélectivement la sensibilité aux pertes"
+    },
+    {
+      "authors": "Lichtenstein, S., & Slovic, P.",
+      "year": 1971,
+      "title": "Reversals of preference between bids and choices in gambling decisions",
+      "journal": "Journal of Experimental Psychology",
+      "volume": "89(1)",
+      "pages": "46-55",
+      "doi": "10.1037/h0031207",
+      "categories": [
+        "Risk & Decision Theory"
+      ],
+      "relevance": "Inversions de préférences - anomalie prédite par la Théorie des Perspectives"
+    },
+    {
+      "authors": "Grether, D. M., & Plott, C. R.",
+      "year": 1979,
+      "title": "Economic Theory of Choice and the Preference Reversal Phenomenon",
+      "journal": "The American Economic Review",
+      "volume": "69(4)",
+      "pages": "623-638",
+      "categories": [
+        "Risk & Decision Theory"
+      ],
+      "relevance": "Confirme les inversions de préférences - viole la théorie standard"
+    },
+    {
+      "authors": "Tversky, A., & Kahneman, D.",
+      "year": 1981,
+      "title": "The Framing of Decisions and the Psychology of Choice",
+      "journal": "Science",
+      "volume": "211(4481)",
+      "pages": "453-458",
+      "doi": "10.1126/science.7455683",
+      "categories": [
+        "Risk & Decision Theory"
+      ],
+      "relevance": "Effets de cadrage - résultats identiques décrits comme gains vs pertes"
+    },
+    {
+      "authors": "Kühberger, A.",
+      "year": 1998,
+      "title": "The Influence of Framing on Risky Decisions: A Meta-analysis",
+      "journal": "Organizational Behavior and Human Decision Processes",
+      "volume": "75(1)",
+      "pages": "23-55",
+      "doi": "10.1006/obhd.1998.2781",
+      "categories": [
+        "Risk & Decision Theory"
+      ],
+      "relevance": "Méta-analyse des effets de cadrage - validité générale"
+    },
+    {
+      "authors": "Booij, G. E.",
+      "year": 1999,
+      "title": "The phonology of Dutch",
+      "publisher": "Oxford University Press",
+      "categories": [
+        "Methods & Computational"
+      ],
+      "relevance": "Règles phonotactiques néerlandaises pour créer des identifiants non sociaux"
+    },
+    {
+      "authors": "Hammond, M.",
+      "year": 1999,
+      "title": "The Phonology of English: A Prosodic Optimality-theoretic Approach",
+      "publisher": "Oxford University Press",
+      "categories": [
+        "Methods & Computational"
+      ],
+      "relevance": "Règles phonotactiques anglaises pour validation de non-mots"
+    },
+    {
+      "authors": "Baayen, R H., Piepenbrock, R, & Gulikers, L.",
+      "year": 1995,
+      "title": "CELEX2",
+      "publisher": "Linguistic Data Consortium",
+      "doi": "10.35111/GS6S-GM48",
+      "categories": [
+        "Methods & Computational"
+      ],
+      "relevance": "Base de données lexicale pour vérifier le statut de non-mot des identifiants"
+    },
+    {
+      "authors": "Yarkoni, T., Balota, D., & Yap, M.",
+      "year": 2008,
+      "title": "Moving beyond Coltheart's N: A new measure of orthographic similarity",
+      "journal": "Psychonomic Bulletin & Review",
+      "volume": "15(5)",
+      "pages": "971-979",
+      "doi": "10.3758/PBR.15.5.971",
+      "categories": [
+        "Methods & Computational"
+      ],
+      "relevance": "OLD20 pour mesurer la densité du voisinage orthographique"
+    }
+  ],
+  "categories": [
+    {
+      "name": "Core Reading",
+      "description": "Essential papers for understanding trust-risk relationship"
+    },
+    {
+      "name": "Trust & Trust Game",
+      "description": "Foundational studies on trust and the Trust Game paradigm"
+    },
+    {
+      "name": "Risk & Decision Theory",
+      "description": "Prospect Theory, decision under uncertainty, decision theory"
+    },
+    {
+      "name": "Trust-Risk Relationship",
+      "description": "Studies directly comparing trust and risk"
+    },
+    {
+      "name": "Social Preferences",
+      "description": "SVO, altruism, cooperation, social preferences"
+    },
+    {
+      "name": "Neuroscience",
+      "description": "fMRI, neural bases of trust and risk"
+    },
+    {
+      "name": "Methods & Computational",
+      "description": "Modeling, statistics, experimental methods"
+    }
+  ]
+}

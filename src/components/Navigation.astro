@@ -1,0 +1,131 @@
+---
+import { t, type Language } from '../i18n/translations';
+
+interface Props {
+  lang: Language;
+  currentPath?: string;
+  spacerBg?: string;
+}
+
+const { lang, currentPath = '/', spacerBg = 'bg-transparent' } = Astro.props;
+
+const base = import.meta.env.BASE_URL;
+const navItems = [
+  { href: base + (lang === 'fr' ? 'fr' : ''), label: t('nav.home', lang) },
+  { href: base + (lang === 'fr' ? 'fr/explore' : 'explore'), label: 'Explore' },
+  { href: base + (lang === 'fr' ? 'fr/journey' : 'journey'), label: t('nav.journey', lang) },
+  { href: base + (lang === 'fr' ? 'fr/references' : 'references'), label: t('nav.references', lang) },
+  { href: base + (lang === 'fr' ? 'fr/about' : 'about'), label: t('nav.about', lang) },
+];
+
+const otherLang = lang === 'fr' ? 'en' : 'fr';
+const otherLangLabel = lang === 'fr' ? 'EN' : 'FR';
+
+// Map current path to other language
+// Get just the page part without base or language prefix
+let pagePath = currentPath || '/';
+// Remove base path if present
+if (pagePath.startsWith(base)) {
+  pagePath = pagePath.slice(base.length - 1); // Keep the leading /
+}
+// Remove /fr prefix if present
+pagePath = pagePath.replace(/^\/fr\/?/, '/');
+if (pagePath === '') pagePath = '/';
+
+// Build the switch URL with base path
+let switchUrl: string;
+if (lang === 'fr') {
+  // Going from FR to EN: base + page path
+  switchUrl = base + pagePath.slice(1); // Remove leading / since base has trailing /
+} else {
+  // Going from EN to FR: base + fr/ + page path
+  switchUrl = base + 'fr' + pagePath;
+}
+// Clean up double slashes
+switchUrl = switchUrl.replace(/\/+/g, '/').replace(/\/$/, '') || base;
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-[#003049] shadow-lg">
+  <div class="max-w-6xl mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo/Title -->
+      <a href={base + (lang === 'fr' ? 'fr' : '')} class="font-figtree text-xl font-bold text-[#FFF9ED] hover:text-[#669bbc] transition-colors">
+        Himalaya Girard
+      </a>
+
+      <!-- Navigation Links -->
+      <div class="hidden md:flex items-center gap-8">
+        {navItems.map(item => (
+          <a
+            href={item.href}
+            class={`font-figtree font-medium transition-colors ${
+              currentPath === item.href
+                ? 'text-[#669bbc] border-b-2 border-[#669bbc] pb-1'
+                : 'text-[#FFF9ED] hover:text-[#669bbc]'
+            }`}
+          >
+            {item.label}
+          </a>
+        ))}
+        
+        <!-- Language Switcher -->
+        <a
+          href={switchUrl}
+          class="px-4 py-2 bg-[#FFF9ED] text-[#003049] rounded-full font-figtree font-bold text-sm hover:bg-[#780000] hover:text-[#FFF9ED] transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg flex items-center gap-2"
+          title={`Switch to ${otherLang === 'fr' ? 'Français' : 'English'}`}
+        >
+          <span class="opacity-50 font-medium text-xs">{lang === 'en' ? 'EN' : 'FR'}</span>
+          <span class="w-px h-3 bg-current opacity-20"></span>
+          <span>{otherLangLabel}</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-button" class="md:hidden p-2 text-[#FFF9ED]">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-3">
+      {navItems.map(item => (
+        <a
+          href={item.href}
+          class={`font-figtree block font-medium transition-colors ${
+            currentPath === item.href
+              ? 'text-[#669bbc]'
+              : 'text-[#FFF9ED] hover:text-[#669bbc]'
+          }`}
+        >
+          {item.label}
+        </a>
+      ))}
+      
+      <!-- Language Switcher (Mobile) -->
+      <a
+        href={switchUrl}
+        class="flex items-center justify-center gap-2 px-4 py-2 bg-[#FFF9ED] text-[#003049] rounded-full font-figtree font-bold text-sm hover:bg-[#780000] hover:text-[#FFF9ED] transition-colors"
+      >
+        <span class="opacity-50 font-medium text-xs">{lang === 'en' ? 'EN' : 'FR'}</span>
+        <span class="w-px h-3 bg-current opacity-20"></span>
+        <span>{otherLangLabel}</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Spacer to prevent content from going under fixed nav -->
+<div class={`h-20 ${spacerBg}`}></div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuButton?.addEventListener('click', () => {
+      mobileMenu?.classList.toggle('hidden');
+    });
+  });
+</script>
